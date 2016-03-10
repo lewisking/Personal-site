@@ -1,0 +1,143 @@
+html {
+	height: 100vh;
+}
+
+body {
+	line-height: 1.9;
+	height: 100vh;
+	font-family: $defaultFontFamily;
+	font-weight: $defaultFontWeight;
+	font-style: $defaultFontStyle;
+	font-size: $initialFontSize;
+	color: palette(default);
+	-webkit-font-smoothing: antialiased; 
+	-moz-osx-font-smoothing: grayscale;
+	@include prefix(transition, all 0.2s);
+}
+
+* {
+	@include prefix(box-sizing, border-box);
+}
+
+strong {
+	font-weight: $boldFontWeight;
+}
+
+// Header tags 
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+	font-family: $headerFontFamily;
+	font-style: $headerFontStyle;
+	font-weight: $headerFontWeight;
+	color: palette(default, dark);
+}
+
+h2 {
+	@include font-size(32);
+}
+
+p {
+	@include font-size(18);
+}
+
+// Link styles 
+
+a {
+	text-decoration: none;
+	color: palette(default, dark);
+	text-decoration: underline;
+	@include prefix(transition, all 0.2s);
+	&:hover {
+		color: palette(default, links);
+	}
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+}
+
+// Background colours for containers 
+
+.container {
+	position: relative;
+	height: 100%;
+	display: table;
+	width: 100%;
+	.inner {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 1.25em 0;
+	}
+	.inner .max-width {
+		margin: auto;
+		width: 90%;
+		max-width: 968px;
+	}
+}
+
+// Introduction section 
+
+.container-introduction {
+	color: palette(default);
+	border-top: none;
+	position: relative;
+	min-height: 400px;
+	background-color: #CF6C71;
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3A395D), color-stop(100%, #CF6C71)),#3A395D;
+	background: -webkit-linear-gradient(#3A395D,#CF6C71),#3A395D;
+	background: -moz-linear-gradient(#3A395D,#CF6C71),#3A395D;
+	background: -o-linear-gradient(#3A395D,#CF6C71),#3A395D;
+	background: linear-gradient(#3A395D,#CF6C71),#3A395D;
+	transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+	transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+	p,
+	p a {
+		color: palette(light, links);
+	}
+	p a:hover {
+		color: palette(light, hover);
+	}
+	h1 {
+		@include font-size(64);
+		margin-bottom: 0.35em;
+		color: palette(light);
+	}
+	.arrow {
+		height: 26px;
+		width: 50px;
+		text-indent: -9999px;
+		display: block;
+		left: 50%;
+		position: absolute;
+		bottom: 10%;
+		margin-left: -25px;
+		background:url("../images/arrow.png") no-repeat;
+		background-size: 50px 26px;
+	}
+	.arrow:active {
+		position: absolute;
+		bottom: 10%;
+		top: auto;
+	}
+	.arrow:hover {
+		bottom: 9.5%;
+	}
+}
+
+// About section 
+
+.container-about,
+.container-contact {
+	background: palette(light);
+}
+
+.container-about .inner p {
+	margin: 4% 0;
+}
+
+// Contact 
+
+.container-contact p {
+	margin: 1.25em 0;
+}

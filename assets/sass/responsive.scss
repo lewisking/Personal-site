@@ -1,0 +1,105 @@
+
+// Responsive things 
+
+@media screen and (max-width: 990px) { 
+	
+	.container-introduction h1 {
+		font-size: 3em;
+	}
+	
+}
+
+@media screen and (max-width: 870px) { 
+
+	.container-current .main .chrome .top {
+		display: none;
+	}
+
+}
+
+
+@media screen and (max-width: 755px) { 
+
+	.container-current .main .text,
+	.container-current .main .chrome {
+		float: none;
+		width: 100%;
+	}
+	
+	.container-current .main .chrome .content {
+		max-height: 400px;
+	}
+	
+	.container-current .main .text,
+	.container-current .main .flip .text {
+		border-left: none;
+		border-right: none;
+		padding: 0;
+		margin: 0;
+		padding-top: 20px;
+		margin-top: 20px;
+		border-top: 1px solid rgba(204, 204, 204, 0.21);
+	}
+	
+	.container-current .center {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 650px) { 
+
+	.container-about .inner p {
+		column-count: 1;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+	}
+	
+}
+
+
+
+@media screen and (max-width: 500px) { 
+	
+	h2 {
+		font-size: 1.5em;
+	}
+	
+	.container .inner {
+		padding: 40px 0;
+	} 
+	
+	.container-about .inner p {
+		margin: 30px 0;
+	}
+	
+	.container-introduction h1 {
+		line-height: 1.25;
+		margin-bottom: 20px;
+		display: block;
+		font-size: 2em;
+	}
+	
+	.container-current .max-width {
+		margin-top: -40px;
+		margin-bottom: -40px;
+	}
+	
+	.container-current .max-width h2 span {
+		display: none;
+	}
+
+	.container-current .main .chrome .content {
+		max-height: 200px;
+	}
+	
+	.container-current .main .item:first-of-type {
+		margin-bottom: 20%;
+	}
+	
+	.container-current .main .text p small {
+		margin-top: 20px;
+	}
+	
+
+}

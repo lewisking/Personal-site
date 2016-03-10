@@ -1,0 +1,120 @@
+// Dropdown menu 
+
+.menu,
+.menu:hover,
+.menu:active {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 1;
+	width: 32px;
+}
+
+.menu span {
+	height: 4px;
+	background: #fff;
+	display: block;
+	margin-bottom: 6px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	&:nth-child(1) {
+		width: 100%;
+	}
+	&:nth-child(2) {
+		width: 80%;
+	}
+	&:nth-child(3) {
+		width: 60%;
+	}
+	&:hover span {
+		width: 100%;
+	}
+}
+
+.menu-close {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.5);
+	display: none;
+	cursor: -webkit-zoom-out;
+	cursor: -moz-zoom-out;
+}
+
+.menu-active .menu-close {
+	display: block;
+}
+
+.menu-active,
+.menu-active body {
+	overflow: hidden;	
+}
+
+// Menu slide-over
+
+.menu-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 40px;
+	background: #000;
+	z-index: 20;
+	transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1), visibility 1s cubic-bezier(0.19, 1, 0.22, 1);
+	transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), visibility 1s cubic-bezier(0.19, 1, 0.22, 1);
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
+	visibility: hidden;
+}
+
+.menu-active .container-introduction {
+	-webkit-transform: translateY(150px);
+	-ms-transform: translateY(150px);
+	transform: translateY(150px);
+}
+
+.menu-active .menu-wrapper {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	visibility: visible;
+}
+
+.menu-wrapper ul {
+	text-align: center;
+	position: relative;
+	-webkit-transform: translateY(-70px);
+	-ms-transform: translateY(-70px);
+	transform: translateY(-70px);
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	-o-transition: all 0.7s;
+	transition: all 0.7s;
+}
+
+.menu-active .menu-wrapper ul {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.menu-wrapper ul li {
+	margin: 2em 0;
+	padding: 0;
+}
+
+.menu-wrapper ul li a {
+	font-size: 2em;
+	line-height: 1;
+	text-decoration: none;
+	position: relative;
+	color: palette(light,hover);
+}
+
+.menu-wrapper ul li a:hover {
+	color: palette(light);
+}

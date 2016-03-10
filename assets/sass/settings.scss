@@ -1,0 +1,29 @@
+$initialFontSize: 16px;
+
+$defaultFontFamily: "freight-sans-pro",sans-serif;
+$defaultFontStyle: normal;
+$defaultFontWeight: 400;
+
+$headerFontFamily: "ff-meta-serif-web-pro",serif;
+$headerFontStyle: normal;
+$headerFontWeight: 700;
+
+$boldFontWeight: $headerFontWeight;
+
+$palettes: (
+    default: (
+        base: #4e4e4e,
+        dark: #2d2d2d,
+        buttons: #6c6c6c,
+        links: #6c6c6c
+    ),
+    light: (
+        base: #fff,
+        buttons: rgba(255,255,255,0.2),
+        links: rgba(255,255,255,0.5),
+        hover: rgba(255,255,255,0.7),
+    )
+);
+
+$defaultBorder: 2px solid #2d2d2d;
+$lighterBorder: 2px solid #fff;

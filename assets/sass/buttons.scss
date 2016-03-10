@@ -1,0 +1,24 @@
+// Buttons 
+
+.button {
+	border: $defaultBorder;
+	padding: 0.5em 1.5em;
+	display: inline-block;
+	@include prefix(border-radius, 30px);
+	text-decoration: none;
+	&:hover {
+		border-color: palette(default,buttons);
+		color: palette(default,buttons);
+		background: rgba(255,255,255,0.2);
+	}
+}
+
+.button-light {
+	border: $lighterBorder;
+	color: palette(light);
+	&:hover {
+		background: palette(light,buttons);
+		border-color: palette(light,buttons);
+		color: palette(light);
+	}
+}

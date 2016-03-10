@@ -1,0 +1,13 @@
+// General resets 
+
+.group::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;	
+}
+
+.center {
+	text-align: center;
+}
