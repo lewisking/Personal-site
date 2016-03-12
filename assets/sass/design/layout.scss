@@ -19,10 +19,6 @@ body {
 	@include prefix(box-sizing, border-box);
 }
 
-strong {
-	font-weight: $boldFontWeight;
-}
-
 // Header tags 
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,6 +35,10 @@ h2 {
 
 p {
 	@include font-size(18);
+}
+
+strong {
+	font-weight: $boldFontWeight;
 }
 
 // Link styles 
@@ -125,19 +125,14 @@ a {
 	}
 }
 
-// About section 
+// Light sections 
 
 .container-about,
 .container-contact {
 	background: palette(light);
 }
 
-.container-about .inner p {
-	margin: 4% 0;
-}
-
-// Contact 
-
+.container-about .inner p,
 .container-contact p {
 	margin: 1.25em 0;
 }

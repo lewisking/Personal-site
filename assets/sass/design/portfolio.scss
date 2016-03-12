@@ -8,95 +8,73 @@
 	background: -o-radial-gradient(#464D74,#2B3A4B);
 	background: radial-gradient(#464D74,#2B3A4B);
 	padding-bottom: 5%;
-}
-
-.container-current-work h2 {
-	color: #fff;
-	margin: 8.5% 0;
-}
-
-.container-current-work .max-width {
-	margin-top: -20px;
-	margin-bottom: -20px;
-}
-
-.container-current-work .main .item {
-	margin-bottom: 8%;
-}
-
-.container-current-work .main .chrome {
-	background: url("assets/images/chrome.png") no-repeat left top;
-	background-size: contain;
-	width: 60%;
-	position: relative;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	overflow: hidden;
-	float: left;
-}
-
-.container-current-work .main .chrome .url {
-	position: absolute;
-	left: 13%;
-	top: 1.6%;
-	font-size: 0.875em;
-	line-height: 1;
-}
-
-.container-current-work .main .chrome img {
-	width: 100%;
-	display: block;
-	height: auto;
-}
-
-.container-current-work .main .chrome .content {
-	max-height: 700px;
-	overflow: scroll;
-}
-
-.container-current-work .main .text {
-	float: left;
-	margin-left: 2.5%;
-	width: 37.5%;
-	border-left: 1px solid rgba(204, 204, 204, 0.21);
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	padding: 0 0 0 2.5%;
-}
-
-.container-current-work p,
-.container-current-work p a {
-	margin-bottom: 15px;
-	color: rgba(255,255,255,0.5);
-}
-
-.container-current-work .main .text p:first-of-type {
-	margin-top: -5px;
-}
-
-.container-current-work .main .text p:last-of-type {
-	margin: 0;
-}
-
-.container-current-work .main .text p small {
-	margin-top: 25px;
-	display: inline-block;
-	font-family: "proxima-nova",sans-serif;
-	font-style: normal;
-	font-weight: 700;
-}
-
-.container-current-work .main .flip .chrome {
-	float: right;
-}
-
-.container-current-work .main .flip .text {
-	float: right;
-	margin-left: 0;
-	margin-right: 2.5%;
-	border-left: 0;
-	border-right: 1px solid rgba(204, 204, 204, 0.21);
-	padding: 0 2.5% 0 0;
+	h2 {
+		color: palette(light);
+		margin: 8.5% 0;
+	}
+	.max-width {
+		margin-top: -20px;
+		margin-bottom: -20px;
+	}
+	.main .item {
+		margin-bottom: 8%;
+	}
+	.main .chrome {
+		background: url("assets/images/chrome.png") no-repeat left top;
+		background-size: contain;
+		width: 60%;
+		position: relative;
+		@include prefix(border-radius, 3px);
+		overflow: hidden;
+		float: left;
+	}
+	.main .chrome .url {
+		position: absolute;
+		left: 13%;
+		top: 1.6%;
+		font-size: 0.875em;
+		line-height: 1;
+	}
+	.main .chrome img {
+		width: 100%;
+		display: block;
+		height: auto;
+	}
+	.main .chrome .content {
+		max-height: 700px;
+		overflow: scroll;
+	}
+	.main .text {
+		float: left;
+		margin-left: 2.5%;
+		width: 37.5%;
+		border-left: 1px solid rgba(204, 204, 204, 0.21);
+		padding: 0 0 0 2.5%;
+	}
+	p,
+	p a {
+		margin-bottom: 15px;
+		color: rgba(255,255,255,0.5);
+	}
+	.text p:first-of-type {
+		margin-top: -5px;
+	}
+	.text p:last-of-type {
+		margin: 0;
+	}
+	.text p small {
+		margin-top: 25px;
+		display: inline-block;
+	}
+	.main .flip .chrome {
+		float: right;
+	}
+	.flip .text {
+		float: right;
+		margin-left: 0;
+		margin-right: 2.5%;
+		border-left: 0;
+		border-right: 1px solid rgba(204, 204, 204, 0.21);
+		padding: 0 2.5% 0 0;
+	}
 }
