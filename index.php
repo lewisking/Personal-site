@@ -3,7 +3,7 @@
 
 <head>
 
-	<meta name="description" content="Lewis King is a designer and front-end developer based in Bath, UK. " /> 
+	<meta name="description" content="Lewis King is a designer and front-end developer based in Bath, UK." /> 
 	<meta name="keywords" content="HTML,CSS,Photoshop,Design,Graphic,WordPress,Integrations,Ecommerce,Development,Responsive,Designer,Lewis,King,Lewis King,XHTML,CSS3,HTML5,Frontend,Developer" /> 
 	<meta name="author" content="Lewis King" /> 
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
@@ -52,10 +52,10 @@
 			</a>
 			
 			<div class="max-width">
+				
+				<span class="tag">- hello</span>
 
-				<h1 class="animated fadeIn delay">Hello, my name is Lewis King</h1>
-		
-				<p class="animated fadeIn delay_two">I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</p>
+				<h1 class="animated fadeIn delay">My name is Lewis King. I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
 				
 				<span class="bounce"><a href="#about" class="arrow animated fadeIn delay_three">Scroll down</a></span>
 			
@@ -64,15 +64,13 @@
 		
 	</div>
 
-	<div class="container container-about" id="about">
+	<div class="container-about" id="about">
 		<div class="inner">
 			<div class="max-width">	
 			
 				<h2>A little about me</h2>
 				
 				<p>Hello, my name is Lewis; I am a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>. I build websites for small companies and individuals all over the world. Currently, I am available to take on a <strong>limited amount</strong> of freelance work through <?= date('F', strtotime('+1 month')); ?>. During the day I'm senior front-end developer at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - where I lead eCommerce site builds and oversee and the front-end of the bluCommerce platform.</p>
-				
-				<a href="#current" class="button" title="Visit my work">View my work</a>
 				
 			</div>
 		</div>
@@ -181,15 +179,31 @@
 				<h2>Let's chat!</h2>
 				<p>Please feel free to contact me via <a href="mailto:lewisking@me.com" title="Email me">email</a>, or find me on the following social networks:</p>
 				
-				<div class="group">
-					<a href="http://twitter.com/lewisking" title="Follow me on Twitter"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="34" height="34" /></a>
-					<a href="http://dribbble.com/lewis" title="Follow me on Dribbble"><img src="assets/images/icons/dribbble.png" alt="dribbble icon" width="34" height="34" /></a>
-					<a href="http://open.spotify.com/user/lewisking1994" title="View my playlists on Spotify"><img src="assets/images/icons/spotify.png" alt="spotify icon" width="34" height="34" /></a>
-					<a href="http://last.fm/user/lewisking" title="Friend me on Last.fm"><img src="assets/images/icons/last.fm.png" alt="last.fm icon" width="34" height="34" /></a>
-					<a href="http://instagram.com/lewis" title="Follow me on Instagram"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="34" height="34" /></a>
-				</div>
+				<ul class="social-networks">
+					<li class="twitter">
+						<a href="#">Twitter</a>
+					</li>
+					<li class="spotify">
+						<a href="#">Spotify</a>
+					</li>
+					<li class="instagram">
+						<a href="#">Instagram</a>
+					</li>
+				</ul>
 				
-				<a href="#introduction" class="button" title="Back to the top of the page">To the top!</a>
+				<script>
+					
+					$('.social-networks li').each(function() {
+					    var socialClass = $(this).attr("class");
+					    $(this).hover(function () {
+					        $(".container-contact").addClass("container-social-" + socialClass);
+					    },function () {
+$(".container-contact").removeClass("container-social-" + socialClass);
+					    });
+					});	
+									
+				</script>
+				
 			</div>
 		</div>
 	

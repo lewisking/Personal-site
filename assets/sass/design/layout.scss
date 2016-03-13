@@ -69,11 +69,12 @@ a {
 		vertical-align: middle;
 		padding: 1.25em 0;
 	}
-	.inner .max-width {
-		margin: auto;
-		width: 90%;
-		max-width: 968px;
-	}
+}
+
+.max-width {
+	margin: auto;
+	width: 90%;
+	max-width: 968px;
 }
 
 // Introduction section 
@@ -91,17 +92,24 @@ a {
 	background: linear-gradient(#3A395D,#CF6C71),#3A395D;
 	transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
 	transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
-	p,
-	p a {
+	.tag {
+		text-transform: uppercase;
 		color: palette(light, links);
-	}
-	p a:hover {
-		color: palette(light, hover);
+		font-weight: $boldFontWeight;
+		margin: 10% 0 1em 0;
+		display: inline-block;
 	}
 	h1 {
 		@include font-size(64);
 		margin-bottom: 0.35em;
 		color: palette(light);
+		line-height: 1.5;
+		a {
+			color: palette(light, links);
+		}
+		a:hover {
+			color: palette(light, hover);
+		}
 	}
 	.arrow {
 		height: 26px;
@@ -132,7 +140,147 @@ a {
 	background: palette(light);
 }
 
-.container-about .inner p,
-.container-contact p {
-	margin: 1.25em 0;
+.container-about {
+	padding: 3em 0 2.5em 0;
+	h2 {
+		margin-bottom: 0.35em;
+	}
+}
+
+.container-contact {
+	@include prefix(transition, all 0.2s);
+	p {
+		margin: 0 0 1em 0;
+		@include font-size(18);
+	}
+	.social-networks {
+		
+	}
+	.social-networks li {
+		display: inline-block;
+		margin: 0 0.25em;
+	}
+	.social-networks li a {
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: #ccc;
+		border-radius: 50%;
+		text-indent: -99999px;
+	}
+	.social-networks li.twitter a {
+		background: $twitterColor;
+	}
+	.social-networks li.spotify a {
+		background: $spotifyColor;
+	}
+	.social-networks li.instagram a {
+		background: $instagramColor;
+	}
+	&.container-social-twitter {
+		background: $twitterColor;
+	}
+	&.container-social-spotify {
+		background: $spotifyColor;
+	}
+	&.container-social-instagram {
+		background: $instagramColor;
+	}
+	&.container-social-twitter,
+	&.container-social-instagram {
+		h2 {
+			color: palette(light);
+		}
+		p {
+			color: palette(light);
+			a {
+				color: palette(light,links);
+			}
+		}
+	}
+	
+}
+
+
+
+
+// Current work 
+
+.container-current-work {
+	background-color: #2B3A4B;
+	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #464D74), color-stop(100%, #2B3A4B));
+	background: -webkit-radial-gradient(#464D74,#2B3A4B);
+	background: -moz-radial-gradient(#464D74,#2B3A4B);
+	background: -o-radial-gradient(#464D74,#2B3A4B);
+	background: radial-gradient(#464D74,#2B3A4B);
+	padding-bottom: 5%;
+	h2 {
+		color: palette(light);
+		margin: 8.5% 0;
+	}
+	.max-width {
+		margin-top: -20px;
+		margin-bottom: -20px;
+	}
+	.main .item {
+		margin-bottom: 8%;
+	}
+	.main .chrome {
+		background: url("assets/images/chrome.png") no-repeat left top;
+		background-size: contain;
+		width: 60%;
+		position: relative;
+		@include prefix(border-radius, 3px);
+		overflow: hidden;
+		float: left;
+	}
+	.main .chrome .url {
+		position: absolute;
+		left: 13%;
+		top: 1.6%;
+		font-size: 0.875em;
+		line-height: 1;
+	}
+	.main .chrome img {
+		width: 100%;
+		display: block;
+		height: auto;
+	}
+	.main .chrome .content {
+		max-height: 700px;
+		overflow: scroll;
+	}
+	.main .text {
+		float: left;
+		margin-left: 2.5%;
+		width: 37.5%;
+		border-left: 1px solid rgba(204, 204, 204, 0.21);
+		padding: 0 0 0 2.5%;
+	}
+	p,
+	p a {
+		margin-bottom: 15px;
+		color: rgba(255,255,255,0.5);
+	}
+	.text p:first-of-type {
+		margin-top: -5px;
+	}
+	.text p:last-of-type {
+		margin: 0;
+	}
+	.text p small {
+		margin-top: 25px;
+		display: inline-block;
+	}
+	.main .flip .chrome {
+		float: right;
+	}
+	.flip .text {
+		float: right;
+		margin-left: 0;
+		margin-right: 2.5%;
+		border-left: 0;
+		border-right: 1px solid rgba(204, 204, 204, 0.21);
+		padding: 0 2.5% 0 0;
+	}
 }
