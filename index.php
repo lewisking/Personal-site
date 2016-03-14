@@ -70,7 +70,7 @@
 			
 				<h2>A little about me</h2>
 				
-				<p>Hello, my name is Lewis; I am a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>. I build websites for small companies and individuals all over the world. Currently, I am available to take on a <strong>limited amount</strong> of freelance work through <?= date('F', strtotime('+1 month')); ?>. During the day I'm senior front-end developer at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - where I lead eCommerce site builds and oversee and the front-end of the bluCommerce platform.</p>
+				<p>Hello, my name is Lewis; I am a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>. I build websites for small companies and individuals all over the world. Currently, I am available to take on a <strong>limited amount</strong> of freelance work through <?= date('F', strtotime('+1 month')); ?>. During the day I'm senior front-end developer at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - where I lead eCommerce site builds, oversee the front-end of the bluCommerce platform and manage the front-end team.</p>
 				
 			</div>
 		</div>
@@ -161,8 +161,6 @@
 				
 				<div class="center">
 					<p>If you would like to see more of my work, please do get in touch; my details are below!</p>
-				
-					<a href="#contact" class="button button-light" title="Contact me">Onwards!</a>
 				</div>
 			
 			</div>
@@ -170,36 +168,36 @@
 		</div>
 	</div>
 		
-	<div class="container container-contact center" id="contact">
+	<div class="container-contact" id="contact">
 		
 		<div class="inner">
 			
 			<div class="max-width">
 								
-				<h2>Let's chat!</h2>
-				<p>Please feel free to contact me via <a href="mailto:lewisking@me.com" title="Email me">email</a>, or find me on the following social networks:</p>
-				
+				<div class="footer-content">
+					<h2>Let's chat!</h2>
+					<p>Please feel free to contact me via <a href="mailto:lewisking@me.com" title="Email me">email</a> or on social media</p>
+				</div>
 				<ul class="social-networks">
 					<li class="twitter">
-						<a href="#">Twitter</a>
+						<a href="http://twitter.com/lewisking" title="Keep up to date with things that I think are somehow are relevant on Twitter">Twitter</a>
 					</li>
 					<li class="spotify">
-						<a href="#">Spotify</a>
+						<a href="https://open.spotify.com/user/lewisking1994" title="Subscribe to my playlists on Spotify">Spotify</a>
 					</li>
 					<li class="instagram">
-						<a href="#">Instagram</a>
+						<a href="http://instagram.com/lewis" title="View my photos that mainly consist of coffee and gigs">Instagram</a>
 					</li>
 				</ul>
 				
 				<script>
 					
+
 					$('.social-networks li').each(function() {
 					    var socialClass = $(this).attr("class");
-					    $(this).hover(function () {
-					        $(".container-contact").addClass("container-social-" + socialClass);
-					    },function () {
-$(".container-contact").removeClass("container-social-" + socialClass);
-					    });
+					    $(this).click(function () {
+					        $(".container-contact").toggleClass("container-social-" + socialClass);
+					    })
 					});	
 									
 				</script>
