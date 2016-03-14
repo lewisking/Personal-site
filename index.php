@@ -53,11 +53,13 @@
 			
 			<div class="max-width">
 				
-				<span class="tag">- hello</span>
+				<span class="tag animated fadeInDown">- hello</span>
 
 				<h1 class="animated fadeIn delay">My name is Lewis King. I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
 				
-				<span class="bounce"><a href="#about" class="arrow animated fadeIn delay_three">Scroll down</a></span>
+				<span class="bounce">
+					<a href="#about" class="arrow animated fadeIn delay">Scroll down</a>
+				</span>
 			
 			</div>
 		</div>

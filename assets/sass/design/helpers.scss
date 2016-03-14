@@ -11,3 +11,7 @@
 .center {
 	text-align: center;
 }
+
+.delay {
+	@include prefix(animation-delay, 1s);
+}

@@ -226,13 +226,13 @@ a {
 
 .container-contact {
 	padding: 5em 0 5em 0;
-	background: #191919;
+	background: #222;
 	@include prefix(transition, all 0.2s);
 	overflow: hidden;
 	.footer-content {
 		float: left;
 		h2 {
-			color: palette(light);
+			color: #CF6C71;
 			font-family: $defaultFontFamily;
 			@include font-size(18);
 			margin-bottom: 0.35em;
@@ -241,7 +241,7 @@ a {
 		p {
 			color: palette(light);
 			a {
-				color: palette(light,links);
+				color: inherit;
 			}
 		}
 	}
