@@ -160,7 +160,7 @@
 				</div>
 				
 				<div class="center">
-					<p>If you would like to see more of my work, please do get in touch; my details are below!</p>
+					<p>This is just a handful of recent projects I have worked on. If you would like to see more, please do get in touch; my details are below!</p>
 				</div>
 			
 			</div>
