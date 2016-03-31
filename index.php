@@ -43,7 +43,7 @@
 
 	<div class="container container-introduction" id="introduction">
 					
-		<div class="inner animated">
+		<div class="inner">
 			
 			<a href="" class="menu" title="Open menu">
 				<span></span>
@@ -53,9 +53,7 @@
 			
 			<div class="max-width">
 				
-				<span class="tag animated fadeInDown">- hello</span>
-
-				<h1 class="animated fadeIn delay">My name is Lewis King. I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
+				<h1 class="animated fadeInSmall delay">Hello, my name is Lewis King. I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
 				
 				<span class="bounce">
 					<a href="#about" class="arrow animated fadeIn delay">Scroll down</a>
@@ -72,7 +70,7 @@
 			
 				<h2>A little about me</h2>
 				
-				<p>Hello, my name is Lewis; I am a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>. I build websites for small companies and individuals all over the world. Currently, I am available to take on a <strong>limited amount</strong> of freelance work through <?= date('F', strtotime('+1 month')); ?>. During the day I'm senior front-end developer at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - where I lead eCommerce site builds, oversee the front-end of the bluCommerce platform and manage the front-end team.</p>
+				<p>Hello, my name is Lewis; I am a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>. I build websites for small companies and individuals all over the world. Currently, I am available to take on a <strong>limited amount</strong> of freelance work through <?= date('F', strtotime('+1 month')); ?>.</p><p> During the day I'm senior front-end developer at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - where I lead eCommerce site builds, oversee the front-end of the bluCommerce platform and manage the front-end team.</p>
 				
 			</div>
 		</div>
