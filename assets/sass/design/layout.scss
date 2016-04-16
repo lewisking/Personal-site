@@ -1,5 +1,51 @@
 html {
 	height: 100vh;
+	opacity: 1;
+	@include prefix(transition, all 0.2s);
+	overflow: auto;
+}
+
+html.wf-loading {
+	.container,
+	.container-about,
+	.container-contact {
+		display: none;
+	}
+	overflow: hidden;
+}
+
+.loader {
+    height: 28px;
+    width: 28px;
+    animation: rotate 0.8s infinite cubic-bezier(0.3, 0, 0.65, 1);
+    border: 2px solid palette(default,buttons);
+    border-right-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    margin-left: -14px;
+    margin-top: -14px;
+    opacity: 0;
+    visibility: hidden;
+	@include prefix(transition, all 0.2s);
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+html.wf-loading {
+	.loader {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
 body {
@@ -135,53 +181,39 @@ a {
 	background: -moz-radial-gradient(#464D74,#2B3A4B);
 	background: -o-radial-gradient(#464D74,#2B3A4B);
 	background: radial-gradient(#464D74,#2B3A4B);
-	padding-bottom: 5%;
+	padding-bottom: 4%;
 	h2 {
 		color: palette(light);
 		margin: 8.5% 0;
 	}
-	.max-width {
-		margin-top: -20px;
-		margin-bottom: -20px;
+	.inner {
+		padding: 0;
 	}
 	.main .item {
 		margin-bottom: 8%;
 	}
-	.main .chrome {
-		background: url("assets/images/chrome.png") no-repeat left top;
-		background-size: contain;
-		width: 60%;
-		position: relative;
-		@include prefix(border-radius, 3px);
+	.main .image {
 		overflow: hidden;
-		float: left;
-	}
-	.main .chrome .url {
-		position: absolute;
-		left: 13%;
-		top: 1.6%;
-		font-size: 0.875em;
-		line-height: 1;
-	}
-	.main .chrome img {
-		width: 100%;
-		display: block;
-		height: auto;
-	}
-	.main .chrome .content {
-		max-height: 700px;
-		overflow: scroll;
+		width: auto;
+		max-height: 400px;
+		overflow: auto;
+		border-radius: 3px;
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
 	}
 	.main .text {
 		float: left;
-		margin-left: 2.5%;
+		margin-right: 2.5%;
 		width: 37.5%;
-		border-left: 1px solid rgba(204, 204, 204, 0.21);
-		padding: 0 0 0 2.5%;
+		border-right: 1px solid rgba(204, 204, 204, 0.21);
+		padding: 0 2.5% 0 0;
 	}
 	p,
 	p a {
-		margin-bottom: 15px;
+		margin-bottom: 1em;
 		color: rgba(255,255,255,0.5);
 	}
 	.text p:first-of-type {
@@ -199,11 +231,14 @@ a {
 	}
 	.flip .text {
 		float: right;
-		margin-left: 0;
-		margin-right: 2.5%;
-		border-left: 0;
-		border-right: 1px solid rgba(204, 204, 204, 0.21);
-		padding: 0 2.5% 0 0;
+		margin-right: 0;
+		margin-left: 2.5%;
+		border-right: 0;
+		border-left: 1px solid rgba(204, 204, 204, 0.21);
+		padding: 0 0 0 2.5%;
+	}
+	.center p {
+		margin-bottom: 0;
 	}
 }
 

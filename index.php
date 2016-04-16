@@ -15,7 +15,12 @@
 	
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/scripts.js" type="text/javascript"></script>
-		
+	<script src="assets/js/wow.min.js" type="text/javascript"></script>
+	
+	<script>
+		new WOW().init();
+	</script>
+	
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -29,6 +34,9 @@
 </head> 
 
 <body class="animated fadeIn slower"> 
+	
+	
+	<div class="loader"></div>
 	
 	<div class="menu-wrapper">
 		
@@ -83,14 +91,8 @@
 				
 				<div class="main group">
 					
-					<div class="item flip group">
-						<div class="chrome">
-							<div class="top">
-								<img src="assets/images/chrome.png" alt="chrome" />
-								<a href="http://independentbath.co" class="url" target="_blank" title="View site">http://independentbath.co</a>
-							</div>
-							<div class="content"><img src="assets/images/portfolio/independentbath.jpg" alt="Independent Bath"/></div>
-						</div>
+					<div class="item wow fadeInLeft group" data-wow-offset="200">
+
 						<div class="text">
 							<p>In my spare time, I run Independent Bath.</p>
 							<p>Both designed and built by me, Independent Bath was created to showcase independent businesses in the wonderful city I call home. </p>
@@ -99,16 +101,13 @@
 							<p><small>A site built entirely by myself</small></p>
 
 						</div>
+						<div class="image">
+							<img src="assets/images/portfolio/independentbath.jpg" alt="Independent Bath"/>
+						</div>
 					</div>  
 				
-					<div class="item group">
-						<div class="chrome">
-							<div class="top">
-								<img src="assets/images/chrome.png" alt="chrome" />
-								<a href="http://society-cafe.com" class="url" target="_blank" title="View site">http://society-cafe.com</a>
-							</div>
-							<div class="content"><img src="assets/images/portfolio/society.jpg" alt="Society Cafe"/></div>
-						</div>
+					<div class="item wow slideInUp flip group" data-wow-offset="200">
+
 						<div class="text">
 							<p>I helped redesign my favourite coffee shop's website to bring their online presence up to date with their store.</p>
 							<p>Now featuring an up-to-date food and drinks list, as well as a map and directions to the store, the new site really makes finding out more about the caf&eacute; much easier.</p>
@@ -117,16 +116,14 @@
 							
 							<p><small>A collaborative design and development with @<a href="http://twitter.com/dizzyup" title="Hector Simpson's twitter profile">dizzyup</a> &amp; @<a href="http://twitter.com/lgladdy" title="Liam Gladdy's twitter profile">lgladdy</a>.</small></p>
 						</div>
+						<div class="image">
+							<img src="assets/images/portfolio/society.jpg" alt="Society Cafe"/>
+						</div>
+						
 					</div>  
 										
-					<div class="item flip group">
-						<div class="chrome">
-							<div class="top">
-								<img src="assets/images/chrome.png" alt="chrome" />
-								<a href="http://designedbyadam.co.uk" class="url" target="_blank" title="View site">http://designedbyadam.co.uk</a>
-							</div>
-							<div class="content"><img src="assets/images/portfolio/adam.jpg" alt="Adam Dale"/></div>
-						</div>
+					<div class="item wow slideInUp group" data-wow-offset="200">
+
 						<div class="text">
 							<p>Award winning designer Adam Dale needed a responsive WordPress theme created for his new portfolio.</p>
 							<p>I wrote a theme that makes use of WordPress Custom Fields, is fully responsive and was finished within a few short weeks.</p>
@@ -135,16 +132,13 @@
 							
 							<p><small>A site built entirely by myself</small></p>
 						</div>
+						<div class="image">
+							<img src="assets/images/portfolio/adam.jpg" alt="Adam Dale"/>
+						</div>
 					</div>  
 					
-					<div class="item group">
-						<div class="chrome">
-							<div class="top">
-								<img src="assets/images/chrome.png" alt="chrome" />
-								<a href="http://more2.com" class="url" target="_blank" title="View site">http://more2.com</a>
-							</div>
-							<div class="content"><img src="assets/images/portfolio/more2.jpg" alt="more2"/></div>
-						</div>
+					<div class="item wow slideInUp flip group" data-wow-offset="200">
+
 						<div class="text">
 							<p>More2 (partner company of blubolt) required a redesign earlier this year to better showcase their history and services.</p>
 							
@@ -154,15 +148,17 @@
 							<p><small>Front-end development and design input via <a href="http://blubolt.com" title="blubolt - eCommerce specialists">blubolt.com</a></small></p>
 
 						</div>
+						<div class="image">
+							<img src="assets/images/portfolio/more2.jpg" alt="more2"/>
+						</div>
 					</div> 
+
+					<div class="center">
+						<p>This is just a handful of recent projects I have worked on. If you would like to see more, please do get in touch; my details are below!</p>
+					</div>
+				
 				</div>
 
-				</div>
-				
-				<div class="center">
-					<p>This is just a handful of recent projects I have worked on. If you would like to see more, please do get in touch; my details are below!</p>
-				</div>
-			
 			</div>
 
 		</div>
