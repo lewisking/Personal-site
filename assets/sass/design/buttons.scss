@@ -7,18 +7,18 @@
 	@include prefix(border-radius, 30px);
 	text-decoration: none;
 	&:hover {
-		border-color: palette(default,buttons);
-		color: palette(default,buttons);
+		border-color: color(default,buttons);
+		color: color(default,buttons);
 		background: rgba(255,255,255,0.2);
 	}
 }
 
 .button-light {
 	border: $lighterBorder;
-	color: palette(light);
+	color: color(light);
 	&:hover {
-		background: palette(light,buttons);
-		border-color: palette(light,buttons);
-		color: palette(light);
+		background: color(light,buttons);
+		border-color: color(light,buttons);
+		color: color(light);
 	}
 }

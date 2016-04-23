@@ -2,7 +2,7 @@ html {
 	height: 100vh;
 	opacity: 1;
 	@include prefix(transition, all 0.2s);
-	overflow: auto;
+	background: color(light);
 }
 
 html.wf-loading {
@@ -15,20 +15,19 @@ html.wf-loading {
 }
 
 .loader {
-    height: 28px;
-    width: 28px;
-    animation: rotate 0.8s infinite cubic-bezier(0.3, 0, 0.65, 1);
-    border: 2px solid palette(default,buttons);
-    border-right-color: transparent;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 20;
-    left: 50%;
-    top: 50%;
-    margin-left: -14px;
-    margin-top: -14px;
-    opacity: 0;
-    visibility: hidden;
+	height: 28px;
+	width: 28px;
+	border: 2px solid color(light, header);
+	border-right-color: transparent;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 20;
+	left: 50%;
+	top: 50%;
+	margin-left: -14px;
+	margin-top: -14px;
+	opacity: 0;
+	visibility: hidden;
 	@include prefix(transition, all 0.2s);
 }
 
@@ -45,6 +44,7 @@ html.wf-loading {
 	.loader {
 		visibility: visible;
 		opacity: 1;
+		animation: rotate 0.8s infinite cubic-bezier(0.3, 0, 0.65, 1);
 	}
 }
 
@@ -55,7 +55,7 @@ body {
 	font-weight: $defaultFontWeight;
 	font-style: $defaultFontStyle;
 	font-size: $initialFontSize;
-	color: palette(default);
+	color: color(light, header);
 	-webkit-font-smoothing: antialiased; 
 	-moz-osx-font-smoothing: grayscale;
 	@include prefix(transition, all 0.2s);
@@ -69,14 +69,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
-	font-family: $headerFontFamily;
-	font-style: $headerFontStyle;
 	font-weight: $headerFontWeight;
-	color: palette(default, dark);
 }
 
 h2 {
-	@include font-size(32);
+	margin-bottom: 0.35em;
 }
 
 p {
@@ -90,30 +87,51 @@ strong {
 // Link styles 
 
 a {
+	color: color(light, header);
 	text-decoration: none;
-	color: palette(default, dark);
-	text-decoration: underline;
+	position: relative;
 	@include prefix(transition, all 0.2s);
-	&:hover {
-		color: palette(default, links);
+	&::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 40%;
+		background: rgba(233, 57, 52, 0.5);
+		content: " ";
+		@include prefix(transition, all 0.2s);
+	}
+	&:hover::after {
+		background: none;
 	}
 	&:active {
 		position: relative;
 		top: 1px;
+	}
+	&.remove-line {
+		&::after {
+			display: none;
+		}
 	}
 }
 
 // Background colours for containers 
 
 .container {
-	position: relative;
-	height: 100%;
-	display: table;
-	width: 100%;
 	.inner {
+		padding: 5% 0;
+	}
+}
+
+.table {
+	display: table;
+	height: 100%;
+	width: 100%;
+	.cell {
 		display: table-cell;
+		width: 100%;
+		height: 100%;
 		vertical-align: middle;
-		padding: 1.25em 0;
 	}
 }
 
@@ -126,16 +144,13 @@ a {
 // Introduction section 
 
 .container-introduction {
-	color: palette(default);
 	border-top: none;
 	position: relative;
-	min-height: 400px;
-	text-align: center;
+	inner {
+		padding: 0;
+	}
 	h1 {
-		@include font-size(64);
-		margin-bottom: 0.35em;
 		line-height: 1.5;
-		font-family: $defaultFontFamily;
 	}
 	.arrow {
 		height: 26px;
@@ -148,25 +163,20 @@ a {
 		margin-left: -25px;
 		background:url("../images/arrow.png") no-repeat;
 		background-size: 50px 26px;
-	}
-	.arrow:active {
-		position: absolute;
-		bottom: 10%;
-		top: auto;
-	}
-	.arrow:hover {
-		bottom: 9.5%;
+		&:active {
+			position: absolute;
+			bottom: 10%;
+			top: auto;
+		}
+		&:hover {
+			bottom: 9.5%;
+		}
 	}
 }
 
-// Light sections 
+// About section 
 
 .container-about {
-	background: palette(light, off);
-	padding: 4em 0 3.5em 0;
-	h2 {
-		margin-bottom: 0.35em;
-	}
 	p:not(:last-of-type) {
 		margin-bottom: 0.875em;
 	}
@@ -175,178 +185,93 @@ a {
 // Current work 
 
 .container-current-work {
-	background-color: #2B3A4B;
-	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #464D74), color-stop(100%, #2B3A4B));
-	background: -webkit-radial-gradient(#464D74,#2B3A4B);
-	background: -moz-radial-gradient(#464D74,#2B3A4B);
-	background: -o-radial-gradient(#464D74,#2B3A4B);
-	background: radial-gradient(#464D74,#2B3A4B);
-	padding-bottom: 4%;
+	overflow: hidden;
 	h2 {
-		color: palette(light);
-		margin: 8.5% 0;
+		margin-bottom: 1.5em;
 	}
 	.inner {
-		padding: 0;
-	}
-	.main .item {
-		margin-bottom: 8%;
-	}
-	.main .image {
 		overflow: hidden;
-		width: auto;
-		max-height: 400px;
-		overflow: auto;
-		border-radius: 3px;
-		img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
 	}
-	.main .text {
+	.item {
+		width: 48%;
+		margin: 0 4% 4% 0;
 		float: left;
-		margin-right: 2.5%;
-		width: 37.5%;
-		border-right: 1px solid rgba(204, 204, 204, 0.21);
-		padding: 0 2.5% 0 0;
-	}
-	p,
-	p a {
-		margin-bottom: 1em;
-		color: rgba(255,255,255,0.5);
-	}
-	.text p:first-of-type {
-		margin-top: -5px;
-	}
-	.text p:last-of-type {
-		margin: 0;
-	}
-	.text p small {
-		margin-top: 25px;
-		display: inline-block;
-	}
-	.main .flip .chrome {
-		float: right;
-	}
-	.flip .text {
-		float: right;
-		margin-right: 0;
-		margin-left: 2.5%;
-		border-right: 0;
-		border-left: 1px solid rgba(204, 204, 204, 0.21);
-		padding: 0 0 0 2.5%;
-	}
-	.center p {
-		margin-bottom: 0;
-	}
-}
-
-.container-contact {
-	padding: 5em 0 5em 0;
-	background: #222;
-	@include prefix(transition, all 0.2s);
-	overflow: hidden;
-	.footer-content {
-		float: left;
-		h2 {
-			color: #CF6C71;
-			font-family: $defaultFontFamily;
-			@include font-size(18);
-			margin-bottom: 0.35em;
-			text-transform: uppercase;
+		position: relative;
+		a {
+			position: static;
 		}
-		p {
-			color: palette(light);
-			a {
-				color: inherit;
+		&:nth-of-type(2n+2) {
+			margin-right: 0;
+		}
+		&:nth-last-child(-n+2) {
+			margin-bottom: 0;
+		}
+		.image {
+			overflow: hidden;
+			width: auto;
+			max-height: 300px;
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+		.text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 2em;
+			text-align: center;
+			background: color(default,text);
+			color: color(light, header);
+			opacity: 0;
+			@include prefix(transition, all 0.2s);
+			p {
+				@include prefix(transition, all 0.4s);
+				@include prefix(transform, translate(0px, 6px));
+			}
+		}
+		&:hover .text {
+			opacity: 1;
+			p {
+				@include prefix(transform, translate(0px, 0px));
 			}
 		}
 	}
+}
+
+// Contact section
+
+.container-contact {
+	text-align: center;
+	@include prefix(transition, all 0.2s);
+	.inner {
+		padding-top: 0;
+	}
 	.social-networks {
-		float: right;
-	}
-	.social-networks li {
 		display: inline-block;
-		margin: 0 0.25em;
-		z-index: 20;
-		position: relative;
-		border-radius: 50%;
-		&::after {
-			position: absolute;
-			content: " ";
-			top: 0;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			text-indent: -99999px;
-			@include prefix(transition, all 0.2s);
-		}
-	}
-	.social-networks li a {
-		display: block;
-		width: 50px;
-		height: 50px;
-		text-indent: -99999px;
-		background-size: 50px auto;
-		position: relative;
-		z-index: 10;
-	}
-	li.twitter {
-		a {
-			background-image: url('../images/icons/twitter.png');
-		}
-		&::after {
-			background: $twitterColor;
-		}
-	}
-	li.spotify {
-		a {
-			background-image: url('../images/icons/spotify.png');
-		}
-		&::after {
-			background: $spotifyColor;
-		}
-	}
-	li.instagram {
-		a {
-			background-image: url('../images/icons/instagram.png');
-		}
-		&::after {
-			background: $instagramColor;
-		}
-	}
-	&.container-social-twitter {
-		background: $twitterColor;
-		li.twitter::after {
-			@include prefix(transform, scale(3));
-		    z-index: 10;
-		    opacity: 0;
-		}
-		h2 {
-			color: palette(light);
-		}
-	}
-	&.container-social-spotify {
-		background: $spotifyColor;
-		li.spotify::after {
-			@include prefix(transform, scale(3));
-		    z-index: 10;
-		    opacity: 0;
-		}
-		h2 {
-			color: palette(light);
-		}
-	}
-	&.container-social-instagram {
-		background: $instagramColor;
-		li.instagram::after {
-			@include prefix(transform, scale(3));
-		    z-index: 10;
-		    opacity: 0;
-		}
-		h2 {
-			color: palette(light);
+		margin-top: 1em;
+		li {
+			display: inline-block;
+			@include font-size(18);
+			margin: 0 1em;
+			&.twitter {
+				a {
+					color: $twitterColor;
+				}
+			}
+			&.spotify {
+				a {
+					color: $spotifyColor;
+				}
+			}
+			&.instagram {
+				a {
+					color: $instagramColor;
+				}
+			}
 		}
 	}
 }

@@ -10,19 +10,16 @@ $headerFontWeight: 700;
 
 $boldFontWeight: $headerFontWeight;
 
-$palettes: (
+$colors: (
     default: (
         base: #4e4e4e,
         dark: #2d2d2d,
-        buttons: #6c6c6c,
-        links: #6c6c6c
+        text: #fff
     ),
     light: (
-        base: #fff,
-        off: #F3F3F3,
-        buttons: rgba(255,255,255,0.2),
-        links: rgba(255,255,255,0.5),
-        hover: rgba(255,255,255,0.7),
+        base: #FFF1E7,
+        header: #E93934,
+        text: #1B2680,
     )
 );
 

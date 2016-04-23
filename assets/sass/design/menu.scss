@@ -4,16 +4,16 @@
 .menu:hover,
 .menu:active {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 1.5em;
+	right: 1.5em;
 	z-index: 1;
-	width: 32px;
+	width: 27px;
 }
 
 .menu {
 	span {
-		height: 4px;
-		background: palette(default);
+		height: 3px;
+		background: color(default, dark);
 		display: block;
 		margin-bottom: 6px;
 		@include prefix(transition, all 0.2s);
@@ -97,9 +97,10 @@
 		line-height: 1;
 		text-decoration: none;
 		position: relative;
-		color: palette(light,hover);
+		color: color(default,text);
+		&:hover {
+			color: color(light, header);
+		}
 	}
-	a:hover {
-		color: palette(light);
-	}
+
 }

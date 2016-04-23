@@ -9,8 +9,8 @@
       #{$property}: #{$value};
 }
 
-@function palette($palette, $tone: 'base') {
-    @return map-get(map-get($palettes, $palette), $tone);
+@function color($color, $tone: 'base') {
+    @return map-get(map-get($colors, $color), $tone);
 }
 
 @mixin font-size($sizeValue) {

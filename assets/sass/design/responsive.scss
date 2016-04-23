@@ -1,90 +1,46 @@
 
 // Responsive things 
 
-@media screen and (max-width: 990px) { 
-	
-	.container-introduction h1 {
-		font-size: 3em;
-	}
-	
-}
+@media screen and (max-width: 785px) { 
 
-
-@media screen and (max-width: 755px) { 
-
-	.container-current-work .main .text,
-	.container-current-work .main .image {
-		float: none;
-		width: 100%;
-	}
-	
-	.container-current-work .main .image {
-		margin-top: 1em;
-	}
-	
-	.container-current-work .main .text,
-	.container-current-work .main .flip .text {
-		border-left: none;
-		border-right: none;
-		padding: 0;
-		margin: 0;
-		padding-top: 20px;
-		margin-top: 20px;
-		border-top: 1px solid rgba(204, 204, 204, 0.21);
-	}
-	
-	.container-current-work .center {
-		display: none;
+	.container-current-work {
+		
+		.item,
+		.item:nth-last-child(-n+2) {
+			width: 100%;
+			margin: 0 0 4% 0;
+			.text {
+				opacity: 0.9;
+				position: static;
+				p {
+					@include prefix(transform, translate(0px, 0px));
+				}
+			}
+		}
+		.item:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
-}
-
-@media screen and (max-width: 710px) { 
-	
-	.container-contact .footer-content,
-	.container-contact .social-networks {
-		float: none;
-	}
-	
-	.container-contact .social-networks {
-		margin-top: 1em;
-	}
-	
 }
 
 @media screen and (max-width: 500px) { 
-	
+
+	.container-introduction h1,
 	h2 {
-		font-size: 1.5em;
+		@include font-size(18);
 	}
 	
-	.container .inner {
-		padding: 40px 0;
-	} 
-	
-	.container-about .inner p {
-		margin: 30px 0;
+	p {
+		@include font-size(16);
 	}
 	
-	.container-introduction h1 {
-		line-height: 1.25;
-		margin-bottom: 20px;
-		display: block;
-		font-size: 2em;
-	}
-	
-	.container-current-work .max-width {
-		margin-top: -30px;
-		margin-bottom: -30px;
-	}
-	
-	.container-current-work .max-width h2 span {
+	.container-introduction .arrow {
 		display: none;
 	}
-
-	.container-current-work .main .image {
-		max-height: 200px;
+	
+	.container-contact {
+		padding: 4em 0;
 	}
-
 
 }
