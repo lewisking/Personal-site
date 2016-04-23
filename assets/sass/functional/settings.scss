@@ -4,11 +4,7 @@ $defaultFontFamily: "freight-sans-pro",sans-serif;
 $defaultFontStyle: normal;
 $defaultFontWeight: 400;
 
-$headerFontFamily: "ff-meta-serif-web-pro",serif;
-$headerFontStyle: normal;
-$headerFontWeight: 700;
-
-$boldFontWeight: $headerFontWeight;
+$boldFontWeight: 700;
 
 $colors: (
     default: (
@@ -22,9 +18,6 @@ $colors: (
         text: #1B2680,
     )
 );
-
-$defaultBorder: 2px solid #2d2d2d;
-$lighterBorder: 2px solid #fff;
 
 $twitterColor: #4099FF;
 $spotifyColor: #23CF5F;
