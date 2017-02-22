@@ -56,16 +56,18 @@ body {
 	font-style: $defaultFontStyle;
 	font-size: $initialFontSize;
 	color: color(light, header);
-	-webkit-font-smoothing: antialiased; 
+	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	@include prefix(transition, all 0.2s);
+	@include prefix(transition, background-color 2s);
+
 }
 
 * {
 	@include prefix(box-sizing, border-box);
 }
 
-// Header tags 
+// Header tags
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
@@ -84,7 +86,7 @@ strong {
 	font-weight: $boldFontWeight;
 }
 
-// Link styles 
+// Link styles
 
 a {
 	color: color(light, header);
@@ -115,7 +117,7 @@ a {
 	}
 }
 
-// Background colours for containers 
+// Background colours for containers
 
 .container {
 	.inner {
@@ -141,7 +143,7 @@ a {
 	max-width: 968px;
 }
 
-// Introduction section 
+// Introduction section
 
 .container-introduction {
 	border-top: none;
@@ -174,7 +176,7 @@ a {
 	}
 }
 
-// About section 
+// About section
 
 .container-about {
 	p:not(:last-of-type) {
@@ -182,7 +184,7 @@ a {
 	}
 }
 
-// Current work 
+// Current work
 
 .container-current-work {
 	overflow: hidden;
