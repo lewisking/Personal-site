@@ -1,10 +1,10 @@
 
-// Responsive things 
+// Responsive things
 
-@media screen and (max-width: 785px) { 
+@media screen and (max-width: 785px) {
 
 	.container-current-work {
-		
+
 		.item,
 		.item:nth-last-child(-n+2) {
 			width: 100%;
@@ -24,19 +24,15 @@
 
 }
 
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
 
 	.container-introduction h1,
 	h2 {
 		@include font-size(18);
 	}
-	
+
 	p {
 		@include font-size(16);
 	}
 	
-	.container-introduction .arrow {
-		display: none;
-	}
-
 }

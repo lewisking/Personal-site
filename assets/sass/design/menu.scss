@@ -1,4 +1,4 @@
-// Dropdown menu 
+// Dropdown menu
 
 .menu,
 .menu:hover,
@@ -50,7 +50,7 @@
 
 .menu-active,
 .menu-active body {
-	overflow: hidden;	
+	overflow: hidden;
 }
 
 // Menu slide-over
@@ -64,13 +64,8 @@
 	z-index: 20;
 	transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), visibility 1s cubic-bezier(0.19, 1, 0.22, 1);
 	transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), visibility 1s cubic-bezier(0.19, 1, 0.22, 1);
-	@include prefix(transform, translateY(-100%));	
+	@include prefix(transform, translateY(-100%));
 	visibility: hidden;
-}
-
-.menu-active .container-introduction {
-	@include prefix(transform, translateY(150px));
-	@include prefix(transition, all 0.2s);
 }
 
 .menu-active .menu-wrapper {
