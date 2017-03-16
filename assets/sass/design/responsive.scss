@@ -1,7 +1,12 @@
 
 // Responsive things
 
+
 @media screen and (max-width: 785px) {
+
+	.container-introduction h1 {
+		font-size: 1.999em;
+	}
 
 	.container-current-work {
 
@@ -10,7 +15,7 @@
 			width: 100%;
 			margin: 0 0 4% 0;
 			.text {
-				opacity: 0.9;
+				opacity: 1;
 				position: static;
 				p {
 					@include prefix(transform, translate(0px, 0px));
@@ -22,17 +27,28 @@
 		}
 	}
 
+	.container .inner {
+		padding: 5em 0 0 0;
+	}
+
+	.container {
+		height: auto;
+		&.container-contact .inner {
+			padding-bottom: 5em;
+		}
+	}
+
 }
 
 @media screen and (max-width: 500px) {
 
 	.container-introduction h1,
 	h2 {
-		@include font-size(18);
+		font-size: 1.414em;
 	}
 
 	p {
 		@include font-size(16);
 	}
-	
+
 }

@@ -7,15 +7,14 @@ $defaultFontWeight: 400;
 $boldFontWeight: 700;
 
 $colors: (
-    default: (
-        base: #4e4e4e,
-        dark: #2d2d2d,
-        text: #fff
+    site: (
+		background: #1b1b1b,
+        text: #f4f5e8
     ),
-    light: (
-        base: #FFF1E7,
-        header: #E93934,
-        text: #1B2680,
+    text: (
+        header: #f4f5e8,
+		links: #f4f5e8,
+		underline: #545454,
     )
 );
 

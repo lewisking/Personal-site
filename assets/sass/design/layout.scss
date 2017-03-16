@@ -1,5 +1,6 @@
 html {
 	opacity: 1;
+	background: color(site, background);
 	@include prefix(transition, all 0.2s);
 }
 
@@ -15,7 +16,7 @@ html.wf-loading {
 .loader {
 	height: 28px;
 	width: 28px;
-	border: 2px solid color(light, header);
+	border: 2px solid color(text, header);
 	border-right-color: transparent;
 	border-radius: 50%;
 	position: absolute;
@@ -56,8 +57,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	@include prefix(transition, all 0.2s);
-	@include prefix(transition, background-color 2s);
-	color: #75747b;
+	color: color(site, text);
 }
 
 * {
@@ -69,7 +69,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
 	font-weight: $boldFontWeight;
-	color: color(light, header);
+	color: color(text, header);
 }
 
 h2 {
@@ -87,7 +87,7 @@ strong {
 // Link styles
 
 a {
-	color: color(light, header);
+	color: color(text, links);
 	text-decoration: none;
 	position: relative;
 	@include prefix(transition, all 0.2s);
@@ -97,7 +97,7 @@ a {
 		left: 0;
 		right: 0;
 		height: 10%;
-		background: rgba(233, 57, 52, 0.5);
+		background: color(text, underline);
 		content: " ";
 		@include prefix(transition, all 0.2s);
 	}
@@ -121,24 +121,14 @@ a {
 	.inner {
 		padding: 5em 0;
 	}
-}
-
-.table {
-	display: table;
-	height: 100%;
-	width: 100%;
-	.cell {
-		display: table-cell;
-		width: 100%;
-		height: 100%;
-		vertical-align: middle;
+	&.container-contact .inner {
+		padding-bottom: 10em;
 	}
 }
-
 .max-width {
 	margin: auto;
 	width: 90%;
-	max-width: 968px;
+	max-width: 815px;
 }
 
 // Introduction section
@@ -147,17 +137,32 @@ a {
 	border-top: none;
 	max-height: 700px;
 	position: relative;
-	inner {
-		padding: 0;
+	.inner {
+		padding: 10em 0;
 	}
+
+	img {
+		width: 70px;
+		height: auto;
+		display: block;
+		border-radius: 50%;
+		margin-bottom: 1em;
+	}
+
 	h1 {
+		display: inline-block;
 		line-height: 1.5;
+		vertical-align: middle;
+		font-size: 2.827em;
 	}
 }
 
 // About section
 
 .container-about {
+	.inner {
+		padding-top: 0;
+	}
 	p:not(:last-of-type) {
 		margin-bottom: 0.875em;
 	}
@@ -177,8 +182,9 @@ a {
 		width: 48%;
 		margin: 0 4% 4% 0;
 		float: left;
+		border-radius: 2px;
+		overflow: hidden;
 		position: relative;
-		border: 1px solid #e8e8e8;
 		a {
 			position: static;
 		}
@@ -206,14 +212,29 @@ a {
 			bottom: 0;
 			padding: 2em;
 			text-align: center;
-			background: color(default,text);
-			color: color(light, header);
+			background: color(site,text);
+			color: color(site, background);
 			opacity: 0;
 			@include prefix(transition, all 0.2s);
 			p {
 				@include prefix(transition, all 0.4s);
 				@include prefix(transform, translate(0px, 6px));
 			}
+		}
+
+		.table,
+		.table .cell {
+			width: 100%;
+			height: 100%;
+		}
+
+		.table {
+			display: table;
+		}
+
+		.table .cell {
+			display: table-cell;;
+			vertical-align: middle;
 		}
 		&:hover .text {
 			opacity: 1;
@@ -229,8 +250,6 @@ a {
 .container-contact {
 	text-align: center;
 	@include prefix(transition, all 0.2s);
-	border-top: 1px solid #f5f5f5;
-	margin-top: 5em;
 	.social-networks {
 		display: inline-block;
 		margin-top: 1em;
