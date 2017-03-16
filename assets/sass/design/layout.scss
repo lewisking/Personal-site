@@ -1,6 +1,5 @@
 html {
 	opacity: 1;
-	background: color(site, background);
 	@include prefix(transition, all 0.2s);
 }
 
@@ -119,10 +118,10 @@ a {
 
 .container {
 	.inner {
-		padding: 5em 0;
+		padding: 5em 0 0 0;
 	}
 	&.container-contact .inner {
-		padding-bottom: 10em;
+		padding-bottom: 5em;
 	}
 }
 .max-width {
@@ -137,8 +136,9 @@ a {
 	border-top: none;
 	max-height: 700px;
 	position: relative;
+	background: color(site, background);
 	.inner {
-		padding: 10em 0;
+		padding: 10em 0 5em 0;
 	}
 
 	img {
@@ -157,12 +157,19 @@ a {
 	}
 }
 
+.container:not(.container-introduction) {
+	h2, a, p strong {
+		color: color(site, background);
+	}
+
+	p {
+		color: #777777;
+	}
+}
+
 // About section
 
 .container-about {
-	.inner {
-		padding-top: 0;
-	}
 	p:not(:last-of-type) {
 		margin-bottom: 0.875em;
 	}
@@ -179,6 +186,7 @@ a {
 		overflow: hidden;
 	}
 	.item {
+		border: 1px solid #ccc;
 		width: 48%;
 		margin: 0 4% 4% 0;
 		float: left;
