@@ -15,7 +15,6 @@
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/scripts.js" type="text/javascript"></script>
 	<script src="assets/js/wow.min.js" type="text/javascript"></script>
-	<script src="assets/js/inview.js" type="text/javascript"></script>
 
 	<script>
 		new WOW().init();
@@ -38,41 +37,20 @@
 
 	<div class="loader"></div>
 
-	<div class="menu-wrapper">
-
-		<ul>
-			<li><a href="#introduction" class="remove-line" title="Visit home section">Home</a></li>
-			<li><a href="#about" class="remove-line" title="Visit about section">About</a></li>
-			<li><a href="#current" class="remove-line" title="Visit projects section">Projects</a></li>
-			<li><a href="#contact" class="remove-line" title="Visit contact section">Contact</a></li>
-		</ul>
-
-	</div>
-
-	<div class="container table container-introduction" id="introduction" data-background-color="#fff1e7">
+	<div class="container table container-introduction" id="introduction">
 
 		<div class="inner cell">
-
-			<a href="" class="menu remove-line" title="Open menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
 
 			<div class="max-width">
 
 				<h1 class="animated fadeInSmall delay">Hello, my name is Lewis King. I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
-
-				<span class="bounce">
-					<a href="#about" class="arrow animated fadeIn delay remove-line">Scroll down</a>
-				</span>
 
 			</div>
 		</div>
 
 	</div>
 
-	<div class="container container-about" id="about" data-background-color="rgb(225, 231, 248)">
+	<div class="container container-about" id="about">
 		<div class="inner">
 			<div class="max-width">
 				<h2>About me</h2>
@@ -85,7 +63,7 @@
 		</div>
 	</div>
 
-	<div class="container container-current-work" id="current" data-background-color="rgb(246, 242, 184)">
+	<div class="container container-current-work" id="current">
 		<div class="inner">
 			<div class="max-width">
 				<h2>Current projects <span>&amp; previous work</span></h2>
@@ -184,16 +162,6 @@
 		</div>
 
 	</div>
-
-	<div class="menu-close"></div>
-
-	<script>
-		var $target = $('html');
-		inView('.container').on('enter', function(el){
-		  var color = $(el).attr('data-background-color');
-		  $target.css('background-color', color );
-		});
-	</script>
 
 	<script src="https://use.typekit.net/dtg8rlv.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
