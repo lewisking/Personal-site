@@ -1,6 +1,7 @@
 $initialFontSize: 16px;
 
-$defaultFontFamily: "freight-sans-pro",sans-serif;
+$defaultFontFamily: 'Karla',sans-serif;
+$headerFontFamily: 'Karla', sans-serif;
 $defaultFontStyle: normal;
 $defaultFontWeight: 400;
 
@@ -15,6 +16,7 @@ $colors: (
         header: #f4f5e8,
 		links: #f4f5e8,
 		underline: #545454,
+		default: #777
     )
 );
 

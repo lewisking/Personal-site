@@ -13,6 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+	<link href="//fonts.googleapis.com/css?family=Karla&subset=latin" rel="stylesheet" type="text/css">
 	<script>
 		new WOW().init();
 	</script>
@@ -29,8 +30,24 @@
 
 </head>
 
-<body>
+<?php
+	date_default_timezone_set('Europe/London');
+	$currentHour = 15; //date('H');
+	$classHour = null;
+	if ($currentHour <= 6) {
+		 $classHour = "nighttime";
+	} elseif ($currentHour <= 10) {
+		 $classHour = "morning";
+	} elseif ($currentHour <= 15) {
+		 $classHour = "afternoon";
+	} elseif ($currentHour <= 20) {
+		$classHour = "early-evening";
+	} elseif ($currentHour <= 24) {
+	   $classHour = "nighttime";
+   };
+?>
 
+<body class="<?= $classHour?>">
 
 	<div class="loader"></div>
 
@@ -40,10 +57,8 @@
 
 			<div class="max-width">
 
-
 				<img src="assets/images/lewis@2x.png" alt="A photograph of me">
-
-				<h1 class="animated fadeInSmall delay">Hello, my name is Lewis King; I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
+				<h1>Hello, my name is Lewis King; I'm a designer &amp; front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
 
 			</div>
 		</div>
@@ -73,12 +88,13 @@
 					<div class="item">
 						<a href="http://independentbath.co" target="_blank" class="remove-line" title="View site">
 							<div class="image">
-								<img src="assets/images/portfolio/independentbath.jpg" alt="Independent Bath"/>
+								<img src="assets/images/portfolio/independentbath.jpg" alt="Visit Independent Bath"/>
 							</div>
 							<div class="text">
 								<div class="table">
 									<div class="cell">
 										<p>In my spare time, I run Independent Bath - showcasing independent businesses in the wonderful city I call home.</p>
+										<p><small>Frontend &bull; Design &bull; Branding &bull; WordPress</small></p>
 									</div>
 								</div>
 							</div>
@@ -86,7 +102,7 @@
 					</div>
 
 					<div class="item">
-						<a href="http://society-cafe.com" target="_blank" class="remove-line" title="View site">
+						<a href="http://society-cafe.com" target="_blank" class="remove-line" title="Visit Society Cafe's site">
 							<div class="image">
 								<img src="assets/images/portfolio/society.jpg" alt="Society Cafe"/>
 							</div>
@@ -95,6 +111,8 @@
 								<div class="table">
 									<div class="cell">
 										<p>I helped redesign my favourite coffee shop's website to bring their online presence up to date with their store.</p>
+										<p><small>Frontend &bull; Design</small></p>
+
 									</div>
 								</div>
 							</div>
@@ -103,7 +121,7 @@
 
 					<div class="item wow fadeInUp" data-wow-offset="200">
 
-						<a href="http://designedbyadam.co.uk" target="_blank" class="remove-line" title="View site">
+						<a href="http://designedbyadam.co.uk" target="_blank" class="remove-line" title="Visit Adam's site">
 							<div class="image">
 								<img src="assets/images/portfolio/adam.jpg" alt="Adam Dale"/>
 							</div>
@@ -112,6 +130,7 @@
 								<div class="table">
 									<div class="cell">
 										<p>Award winning designer Adam Dale needed a responsive WordPress theme created for his new portfolio.</p>
+										<p><small>Frontend &bull; WordPress</small></p>
 									</div>
 								</div>
 							</div>
@@ -120,7 +139,7 @@
 
 					<div class="item">
 
-						<a href="http://more2.com" target="_blank" class="remove-line" title="View site">
+						<a href="http://more2.com" target="_blank" class="remove-line" title="Visit More2's site">
 							<div class="image">
 								<img src="assets/images/portfolio/more2.jpg" alt="more2"/>
 							</div>
@@ -129,6 +148,7 @@
 								<div class="table">
 									<div class="cell">
 										<p>More2 (partner company of blubolt) required a redesign earlier this year to better showcase their history and services.</p>
+										<p><small>Frontend &bull; WordPress</small></p>
 									</div>
 								</div>
 							</div>

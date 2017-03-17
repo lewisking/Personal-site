@@ -11,15 +11,22 @@
 	.container-current-work {
 
 		.item,
-		.item:nth-last-child(-n+2) {
+		.item:nth-of-type(odd) {
 			width: 100%;
 			margin: 0 0 4% 0;
+			.image {
+				width: 100%;
+				max-height: 250px;
+				height: auto;
+				overflow: hidden;
+				float: none;
+			}
 			.text {
-				opacity: 1;
+				width: 100%;
 				position: static;
-				p {
-					@include prefix(transform, translate(0px, 0px));
-				}
+				padding: 0.5em 0 0 0;
+				float: none;
+				overflow: hidden;
 			}
 		}
 		.item:last-of-type {
@@ -28,13 +35,17 @@
 	}
 
 	.container .inner {
-		padding: 5em 0 0 0;
+		padding: 3em 0 0 0;
+	}
+
+	.container.container-introduction .inner {
+		padding: 5em 0 3em 0;
 	}
 
 	.container {
 		height: auto;
 		&.container-contact .inner {
-			padding-bottom: 5em;
+			padding-bottom: 3em;
 		}
 	}
 
