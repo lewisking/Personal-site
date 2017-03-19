@@ -2,53 +2,6 @@
 	@include prefix(box-sizing, border-box);
 }
 
-html {
-	overflow: hidden;
-	.container {
-		display: none;
-	}
-	&.wf-active {
-		overflow: visible;
-		.container {
-			display: block;
-		}
-	}
-}
-
-.loader {
-	height: 28px;
-	width: 28px;
-	border: 2px solid color(site, background);
-	border-right-color: transparent;
-	border-radius: 50%;
-	position: absolute;
-	z-index: 20;
-	left: 50%;
-	top: 50%;
-	margin-left: -14px;
-	margin-top: -14px;
-	opacity: 0;
-	visibility: hidden;
-	@include prefix(transition, all 0.2s);
-}
-
-@keyframes rotate {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-html.wf-loading {
-	.loader {
-		visibility: visible;
-		opacity: 1;
-		animation: rotate 0.8s infinite cubic-bezier(0.3, 0, 0.65, 1);
-	}
-}
-
 body {
 	line-height: 1.9;
 	font-family: $defaultFontFamily;

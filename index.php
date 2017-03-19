@@ -14,9 +14,6 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 	<link href="//fonts.googleapis.com/css?family=Karla&subset=latin" rel="stylesheet" type="text/css">
-	<script>
-		new WOW().init();
-	</script>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,7 +29,7 @@
 
 <?php
 	date_default_timezone_set('Europe/London');
-	$currentHour = 15; //date('H');
+	$currentHour = date('H');
 	$classHour = null;
 	if ($currentHour <= 6) {
 		 $classHour = "nighttime";
@@ -48,8 +45,6 @@
 ?>
 
 <body class="<?= $classHour?>">
-
-	<div class="loader"></div>
 
 	<div class="container table container-introduction" id="introduction">
 
@@ -170,13 +165,13 @@
 					<p>Want to work together? Please feel free to contact me via <a href="mailto:lewisking@me.com" title="Email me">email</a>. You can find me on social media too:</p>
 					<ul class="social-networks">
 						<li class="twitter">
-							<a href="http://twitter.com/lewisking" class="remove-line" title="Keep up to date with things that I think are somehow are relevant on Twitter">Twitter</a>
+							<a target="_blank" href="http://twitter.com/lewisking" class="remove-line" title="Keep up to date with things that I think are somehow are relevant on Twitter">Twitter</a>
 						</li>
 						<li class="spotify">
-							<a href="https://open.spotify.com/user/lewisking1994" class="remove-line" title="Subscribe to my playlists on Spotify">Spotify</a>
+							<a target="_blank" href="https://open.spotify.com/user/lewisking1994" class="remove-line" title="Subscribe to my playlists on Spotify">Spotify</a>
 						</li>
 						<li class="instagram">
-							<a href="http://instagram.com/lewis" class="remove-line" title="View my photos that mainly consist of coffee and gigs">Instagram</a>
+							<a target="_blank" href="http://instagram.com/lewis" class="remove-line" title="View my photos that mainly consist of coffee, travelling and bands I see live">Instagram</a>
 						</li>
 					</ul>
 
@@ -185,9 +180,6 @@
 
 		</div>
 	</div>
-
-	<script src="https://use.typekit.net/dtg8rlv.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 </body>
 
