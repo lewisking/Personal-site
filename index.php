@@ -150,6 +150,24 @@
 						</a>
 					</div>
 
+					
+					<div class="item">
+
+						<a href="http://blubolt.com" target="_blank" class="remove-line" title="Visit blubolt's site">
+							<div class="image">
+								<img src="assets/images/portfolio/blubolt.jpg" alt="blubolt"/>
+							</div>
+
+							<div class="text">
+								<div class="table">
+									<div class="cell">
+										<p>This year I rebuilt the blubolt site from scratch, further refining our site and new focus on blog content</p>
+										<p><small>Frontend &bull; WordPress</small></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
 
 				</div>
 
