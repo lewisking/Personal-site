@@ -3,12 +3,12 @@
 
 <head>
 
-	<meta name="description" content="Lewis King is a designer and front-end developer based in Bath, UK." />
+	<meta name="description" content="Lewis King is a designer and User Interface Developer based in Bath, UK." />
 	<meta name="keywords" content="HTML,CSS,Photoshop,Design,Graphic,WordPress,Integrations,Ecommerce,Development,Responsive,Designer,Lewis,King,Lewis King,XHTML,CSS3,HTML5,Frontend,Developer" />
 	<meta name="author" content="Lewis King" />
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
-	<title>Lewis King - Senior front-end developer</title>
+	<title>Lewis King - Senior User Interface Developer</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css" media="all" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -53,7 +53,7 @@
 			<div class="max-width">
 
 				<img src="assets/images/lewis@2x.png" alt="A photograph of me">
-				<h1>Hello, my name is Lewis King; I'm a senior front-end developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
+				<h1>Hello, my name is Lewis King; I'm a Senior User Interface Developer based in the beautiful city of <a href="http://en.wikipedia.org/wiki/Bath,_Somerset" target="_blank" title="A link to a Wikipedia article on Bath">Bath, UK</a>.</h1>
 
 			</div>
 		</div>
