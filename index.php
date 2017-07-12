@@ -3,7 +3,7 @@
 
 <head>
 
-	<meta name="description" content="Lewis King is a designer and User Interface Developer based in Bath, UK." />
+	<meta name="description" content="Lewis King is a User Interface Developer based in Bath, UK." />
 	<meta name="keywords" content="HTML,CSS,Photoshop,Design,Graphic,WordPress,Integrations,Ecommerce,Development,Responsive,Designer,Lewis,King,Lewis King,XHTML,CSS3,HTML5,Frontend,Developer" />
 	<meta name="author" content="Lewis King" />
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
