@@ -1,5 +1,5 @@
 // This mixin sets the font size in rems with a px fallback
-@mixin font-size($sizeValue: $defaultFontSize) {
+@mixin font-size($sizeValue: $initialFontSize) {
 	font-size: ($sizeValue) + px;
-	font-size: $sizeValue / $defaultFontSize + rem;
+	font-size: $sizeValue / $initialFontSize + rem;
 }

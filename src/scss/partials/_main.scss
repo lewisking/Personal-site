@@ -1,3 +1,19 @@
-.main {
+// Background colours for containers
 
+.container {
+	.inner {
+		padding: 7em 0 0 0;
+	}
+	&.container-contact .inner {
+		padding-bottom: 7em;
+	}
+	&.container-introduction .inner {
+		padding: 10em 0 7em 0;
+	}
+}
+
+.max-width {
+	margin: auto;
+	width: 90%;
+	max-width: 815px;
 }

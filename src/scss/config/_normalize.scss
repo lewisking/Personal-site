@@ -43,7 +43,7 @@ body {
 
 a {
 	background: transparent;
-	color: color(text, header);
+	color: $colorTextHeader;
 }
 
 a:focus,

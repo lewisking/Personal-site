@@ -1,0 +1,28 @@
+// Header tags
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+	font-weight: $boldFontWeight;
+}
+
+h2 {
+	margin-bottom: 0.35em;
+}
+
+p {
+	@include font-size(18);
+}
+
+strong {
+	font-weight: $boldFontWeight;
+}
+
+::selection {
+	background: $colorSiteBackground;
+	color: $colorTextHeader;
+}
+
+::-moz-selection {
+	background: $colorSiteBackground;
+	color: $colorTextHeader;
+}

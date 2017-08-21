@@ -1,7 +1,6 @@
 // Sass Mixins
 @import 'mixins/_prefix.scss';
 @import 'mixins/_fontsize.scss';
-@import 'mixins/_colours.scss';
 
 // Configuration/global
 @import 'config/_vars.scss';
@@ -9,24 +8,23 @@
 @import 'config/_normalize.scss';
 
 // Components
-@import 'components/_buttons.scss';
-@import 'components/_inputs.scss';
-@import 'components/_lists.scss';
-@import 'components/_typography.scss';
-@import 'components/_misc.scss';
 @import 'components/_app.scss';
+@import 'components/_links.scss';
+@import 'components/_typography.scss';
 
 // Partials
-@import 'partials/_header.scss';
-@import 'partials/_nav.scss';
-@import 'partials/_sidebar.scss';
 @import 'partials/_main.scss';
-@import 'partials/_footer.scss';
+@import 'partials/_introduction.scss';
+@import 'partials/_about.scss';
+@import 'partials/_currentwork.scss';
+@import 'partials/_contact.scss';
+
 
 // Modifiers
 @import 'modifiers/_breakpoints.scss';
-@import 'modifiers/_print.scss';
+//@import 'modifiers/_print.scss';
+@import 'modifiers/_timeline.scss';
 
 // External tools
-@import 'vendor/_external.scss';
+//@import 'vendor/_external.scss';
 @import 'vendor/_animate.scss';

@@ -1,25 +1,22 @@
-$initialFontSize: 16px;
+$initialFontSize: 16;
 
 $defaultFontFamily: 'Karla',sans-serif;
 $headerFontFamily: 'Karla', sans-serif;
 $defaultFontStyle: normal;
 $defaultFontWeight: 400;
-$defaultFontSize: 16;
 
 $boldFontWeight: 700;
 
-$colors: (
-    site: (
-		background: #1b1b1b,
-        text: #f4f5e8
-    ),
-    text: (
-        header: #f4f5e8,
-		links: #f4f5e8,
-		underline: #545454,
-		default: #777
-    )
-);
+
+$colorSiteBackground: #1b1b1b;
+$colorSiteText: #f4f5e8;
+
+$colorTextHeader: #f4f5e8;
+$colorTextLinks: #f4f5e8;
+$colorTextUnderline: #545454;
+$colorTextDefault: #777;
+
+
 
 $twitterColor: #4099FF;
 $spotifyColor: #23CF5F;
