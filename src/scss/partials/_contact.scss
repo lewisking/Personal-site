@@ -5,20 +5,21 @@
 	background: $colorSiteBackground;
 	p {
 		max-width: 550px;
-		color: $colorTextDefault;
 		margin-left: auto;
 		margin-right: auto;
+		color: $colorTextDefault;
 		&:first-of-type {
 			margin-top: 0;
 		}
-
 		&:last-of-type {
 			margin-bottom: 0;
 		}
 	}
 	.social-networks {
-		display: inline-block;
+		display: flex;
 		margin: 0.35em 0 0 0;
+		align-items: center;
+		justify-content: center;
 		padding: 0;
 		li {
 			display: inline-block;

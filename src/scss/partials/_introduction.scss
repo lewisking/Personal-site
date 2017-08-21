@@ -7,31 +7,17 @@
 		height: auto;
 		display: block;
 		border-radius: 50%;
-		margin-bottom: 1em;
 	}
 
 	h1 {
 		display: inline-block;
 		line-height: 1.5;
-		vertical-align: middle;
 		font-size: 2.5em;
-		font-family: $headerFontFamily;
 		color: $colorTextHeader;
 		font-weight: 700;
-	}
-
-	h1 a::after {
-		background: $colorTextHeader;
-	}
-}
-
-.container-current-work,
-.container-about {
-	h2, a, p strong {
-		color: $colorSiteBackground;
-	}
-
-	p {
-		color: $colorTextDefault;
+		margin-bottom: 0;
+		a::after {
+			background: $colorTextHeader;
+		}
 	}
 }

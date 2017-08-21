@@ -6,13 +6,11 @@
 	}
 	.inner {
 		overflow: hidden;
-		padding-bottom: 4em;
 	}
-
 	small {
 		@include font-size(12);
 		text-transform: uppercase;
-		color: #cccccc;
+		color: lighten($colorTextDefault,20%);
 	}
 	.item {
 		width: 100%;
@@ -37,7 +35,6 @@
 		.text {
 			width: 40%;
 			padding-left: 3em;
-			@include prefix(transition, all 0.2s ease-in-out);
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -50,7 +47,7 @@
 				}
 			}
 		}
-		
+
 		&:nth-child(even) {
 			a {
 				flex-direction: row-reverse;

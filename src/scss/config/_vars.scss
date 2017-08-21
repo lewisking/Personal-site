@@ -1,22 +1,15 @@
 $initialFontSize: 16;
 
 $defaultFontFamily: 'Karla',sans-serif;
-$headerFontFamily: 'Karla', sans-serif;
-$defaultFontStyle: normal;
 $defaultFontWeight: 400;
-
 $boldFontWeight: 700;
 
-
 $colorSiteBackground: #1b1b1b;
-$colorSiteText: #f4f5e8;
 
 $colorTextHeader: #f4f5e8;
-$colorTextLinks: #f4f5e8;
+$colorTextLinks: $colorTextHeader;
 $colorTextUnderline: #545454;
 $colorTextDefault: #777;
-
-
 
 $twitterColor: #4099FF;
 $spotifyColor: #23CF5F;

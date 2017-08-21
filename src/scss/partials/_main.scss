@@ -7,8 +7,22 @@
 	&.container-contact .inner {
 		padding-bottom: 7em;
 	}
+	&.container-current-work .inner {
+		padding-bottom: 4em;
+	}
 	&.container-introduction .inner {
 		padding: 10em 0 7em 0;
+	}
+}
+
+.container-current-work,
+.container-about {
+	h2, a, p strong {
+		color: $colorSiteBackground;
+	}
+
+	p {
+		color: $colorTextDefault;
 	}
 }
 
