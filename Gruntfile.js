@@ -48,6 +48,13 @@ module.exports = function (grunt) {
       ]
     },
 
+	autoprefixer: {
+	  single_file: {
+	    src: '<%= project.assets %>/css/style.min.css',
+	    dest: '<%= project.assets %>/css/style.min.css'
+	  },
+	},
+
     /**
      * Connect port/livereload
      * https://github.com/gruntjs/grunt-contrib-connect
@@ -172,6 +179,8 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-autoprefixer');
+
   /**
    * Default task
    * Run `grunt` on the command line
@@ -182,7 +191,7 @@ module.exports = function (grunt) {
     'concat:dev',
     'connect:livereload',
     'open',
-    'watch'
+    'watch',
   ]);
 
   /**
@@ -192,8 +201,9 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('build', [
     'sass:dist',
+	'autoprefixer',
     'jshint',
-    'uglify'
+    'uglify',
   ]);
 
 };
