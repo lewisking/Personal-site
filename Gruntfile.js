@@ -179,8 +179,6 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-autoprefixer');
-
   /**
    * Default task
    * Run `grunt` on the command line
@@ -201,8 +199,8 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('build', [
     'sass:dist',
+	'jshint',
 	'autoprefixer',
-    'jshint',
     'uglify',
   ]);
 

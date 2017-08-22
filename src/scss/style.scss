@@ -6,11 +6,13 @@
 @import 'config/_vars.scss';
 @import 'config/_clearfix.scss';
 @import 'config/_normalize.scss';
+@import 'config/_fonts.scss';
 
 // Components
 @import 'components/_app.scss';
 @import 'components/_links.scss';
 @import 'components/_typography.scss';
+
 
 // Partials
 @import 'partials/_main.scss';
@@ -26,5 +28,4 @@
 @import 'modifiers/_timeline.scss';
 
 // External tools
-//@import 'vendor/_external.scss';
 @import 'vendor/_animate.scss';
