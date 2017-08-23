@@ -6,8 +6,6 @@ node_modules
 .DS_Store
 .tmp
 .sass-cache
-
-style.min.css
-style.min.css.map
-
-scripts.min.js
+*.css
+*.map
+*.min.js
