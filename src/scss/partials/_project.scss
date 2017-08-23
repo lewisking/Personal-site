@@ -1,0 +1,24 @@
+// Contact section
+
+.container-image-buster {
+	display: block;
+	width: 120%;
+	margin: 4em 0 4em -10%;
+	box-shadow: 0px 0px 20px rgba($colorTextLinks,0.3);
+	border-radius: 3px;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+
+.container-project-link {
+	padding-bottom: 7em;
+	a {
+		font-size: 1.75em;
+		font-family: $headingFontFamily;
+		font-weight: normal;
+	}
+}

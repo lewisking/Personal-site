@@ -8,10 +8,11 @@ body {
 	font-weight: $defaultFontWeight;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: $colorSiteBackground;
 }
 
 // General animation delays
 
 .delay {
-	@include prefix(animation-delay, 0.75s);
+	@include prefix(animation-delay, 1s);
 }

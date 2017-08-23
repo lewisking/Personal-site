@@ -2,61 +2,10 @@
 
 @media screen and (max-width: 785px) {
 
-	.container-introduction h1 {
-		font-size: 1.999em;
-	}
-
-	.container-current-work {
-
-		.item,
-		.item:nth-of-type(odd) {
-			width: 100%;
-			margin: 0 0 3em 0;
-			a {
-				display: block;
-			}
-			.image {
-				width: 100%;
-				max-height: 250px;
-			}
-			.text {
-				width: 100%;
-				padding: 0.5em 0 0 0;
-				display: block;
-			}
-		}
-	}
-
-	.container .inner {
-		padding: 3em 0 0 0;
-	}
-
-	.container.container-introduction .inner,
-	.container.container-current-work .inner {
-		padding: 5em 0 3em 0;
-	}
-
-	.container {
-		&.container-contact .inner {
-			padding-bottom: 3.75em;
-		}
-	}
 
 }
 
 @media screen and (max-width: 500px) {
 
-	.container-introduction h1,
-	h2 {
-		font-size: 1.414em;
-	}
-
-	p {
-		@include font-size(16);
-	}
-
-	h2 span {
-		display: none;
-	}
 
 }

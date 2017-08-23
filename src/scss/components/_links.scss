@@ -2,24 +2,14 @@
 
 a {
 	color: $colorTextLinks;
-	text-decoration: none;
 	position: relative;
+	text-decoration: none;
 	@include prefix(transition, all 0.2s);
-	&:not(.remove-line)::after {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 10%;
-		background: $colorTextUnderline;
-		content: " ";
-		@include prefix(transition, all 0.2s);
-	}
-	&:not(.remove-line):hover::after {
-		background: none;
-	}
-	&:active {
-		position: relative;
-		top: 1px;
+	&:not(.remove-line) {
+		text-decoration: underline;
+		&:active {
+			position: relative;
+			top: 1px;
+		}
 	}
 }

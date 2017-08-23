@@ -4,7 +4,6 @@
 
 // Configuration/global
 @import 'config/_vars.scss';
-@import 'config/_clearfix.scss';
 @import 'config/_normalize.scss';
 @import 'config/_fonts.scss';
 
@@ -20,12 +19,13 @@
 @import 'partials/_about.scss';
 @import 'partials/_currentwork.scss';
 @import 'partials/_contact.scss';
+@import 'partials/_project.scss';
 
 
 // Modifiers
 @import 'modifiers/_breakpoints.scss';
 //@import 'modifiers/_print.scss';
-@import 'modifiers/_timeline.scss';
+//@import 'modifiers/_timeline.scss';
 
 // External tools
 @import 'vendor/_animate.scss';
