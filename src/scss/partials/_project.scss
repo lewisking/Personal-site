@@ -4,21 +4,115 @@
 	display: block;
 	width: 120%;
 	margin: 4em 0 4em -10%;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.13);
-	border-radius: 3px;
-	overflow: hidden;
 	img {
 		width: 100%;
 		height: auto;
+		border-radius: 3px;
 		display: block;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.13);
+	}
+}
+
+.bluprint-messages {
+	display: flex; // @todo stop stretching of images
+	img {
+		@include prefix(transition, all 0.4s ease-in-out);
+		width: 50%;
+		position: relative;
+		&:nth-child(2) {
+			transform: translateX(-50%);
+		}
+		&:nth-child(3) {
+			transform: translateX(-100%);
+		}
+	}
+	&:hover {
+		img {
+			&:nth-child(1) {
+				transform: translateX(-10%);
+			}
+			&:nth-child(2) {
+				transform: translateX(-55%);
+			}
+			&:nth-child(3) {
+				transform: translateX(-95%);
+			}
+		}
+	}
+}
+
+.container-image-buster-spread {
+	margin-bottom: 6.5em;
+	position: relative;
+	height: 799px;
+	img {
+		@include prefix(transition, all 0.4s ease-in-out);
+		position: absolute;
+		transform-origin: bottom center;
+		&:first-of-type {
+			transform: rotate(-3deg) translateX(-5%);
+		}
+		&:last-of-type {
+			transform: rotate(3deg) translateX(5%);
+		}
+	}
+
+	&:hover {
+		img {
+			&:first-of-type {
+				transform: rotate(-7deg) translateX(-5%);
+			}
+			&:nth-of-type(2) {
+				transform: rotate(-1deg) translateX(0);
+			}
+			&:last-of-type {
+				transform: rotate(5deg) translateX(5%);
+			}
+		}
 	}
 }
 
 .container-project-link {
 	padding-bottom: 7em;
-	a {
+	display: flex;
+	justify-content: space-between;
+	.next-link {
+		float: right;
+		&::after {
+			display: inline-block;
+			padding-left: 0.25em;
+			@include prefix(transition, translate 0.2s ease-in-out);
+			content: ' →';
+		}
+		&:hover {
+			&::after {
+				transform: translateX(5px);
+			}
+		}
+	}
+
+	.previous-link {
+		float: left;
+		&::before {
+			display: inline-block;
+			padding-right: 0.25em;
+			@include prefix(transition, translate 0.2s ease-in-out);
+			content: '← ';
+		}
+		&:hover {
+			&::before {
+				transform: translateX(-5px);
+			}
+		}
+	}
+
+	.external-project-link {
 		font-size: 1.75em;
 		font-family: $headingFontFamily;
 		font-weight: normal;
+		clear: both;
+		display: block;
+		width: 100%;
+		margin-bottom: 4em;
 	}
 }

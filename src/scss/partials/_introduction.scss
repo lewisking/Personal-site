@@ -1,25 +1,30 @@
 // Introduction section
 
-.container-introduction {
+.icon-me {
+	position: absolute;
+	left: 1em;
+	top: 1em;
 	img {
 		width: 40px;
 		height: auto;
 		display: block;
 		border-radius: 50%;
-		position: absolute;
-		left: 1em;
-		top: 1em;
 	}
+}
+
+.container-introduction {
 	h1 {
-		margin-top: 0.4em;
 		display: inline-block;
 		line-height: 1.5;
 		font-size: 2em;
 		font-family: $headingFontFamily;
 		font-weight: normal;
-		color: darken($colorTextDefault, 20%);
+		color: darken($colorTextDefault, 40%);
 		a {
-			color: darken($colorTextDefault, 20%);
+			color: darken($colorTextDefault, 40%);
 		}
+	}
+	h2 + h1 {
+		margin-top: 0.4em;
 	}
 }

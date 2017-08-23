@@ -22,15 +22,21 @@ p {
 	}
 }
 
+p + h2 {
+	margin-top: 4em;
+}
+
 strong {
 	font-weight: $boldFontWeight;
 	color: darken($colorTextDefault, 20%);
 }
 
 ::selection {
-	background: $colorSiteBackground;
+	background: darken($colorTextDefault, 30%);
+	color: $colorSiteBackground;
 }
 
 ::-moz-selection {
-	background: $colorSiteBackground;
+	background: darken($colorTextDefault, 30%);
+	color: $colorSiteBackground;
 }
