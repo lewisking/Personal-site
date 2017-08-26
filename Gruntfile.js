@@ -3,7 +3,8 @@
  * @author Lewis King
  */
 
-'use strict';
+const mozjpeg = require('imagemin-mozjpeg');
+
 
 /**
  * Livereload and connect variables
@@ -150,6 +151,29 @@ module.exports = function (grunt) {
       }
     },
 
+	imagemin: {
+	   static: {
+		   options: {
+			   optimizationLevel: 3,
+			   svgoPlugins: [{removeViewBox: false}],
+			   use: [mozjpeg()] // Example plugin usage
+		   },
+		   files: {
+			   'dist/img.png': 'src/img.png',
+			   'dist/img.jpg': 'src/img.jpg',
+			   'dist/img.gif': 'src/img.gif'
+		   }
+	   },
+	   dynamic: {
+		   files: [{
+			   expand: true,
+			   cwd: 'src/',
+			   src: ['**/*.{png,jpg,gif}'],
+			   dest: 'dist/'
+		   }]
+	   }
+   },
+
     /**
      * Runs tasks against changed watched files
      * https://github.com/gruntjs/grunt-contrib-watch
@@ -177,6 +201,10 @@ module.exports = function (grunt) {
         ]
       }
     }
+
+
+
+
   });
 
   /**
@@ -202,6 +230,7 @@ module.exports = function (grunt) {
 	'jshint',
 	'autoprefixer',
     'uglify',
+	'imagemin'
   ]);
 
 };
