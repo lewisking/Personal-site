@@ -1,5 +1,5 @@
 * {
-	@include prefix(box-sizing, border-box);
+	box-sizing: border-box;
 }
 
 body {
@@ -14,5 +14,5 @@ body {
 // General animation delays
 
 .delay {
-	@include prefix(animation-delay, 1s);
+	animation-delay: 1s;
 }

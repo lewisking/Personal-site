@@ -4,7 +4,7 @@ a {
 	color: $colorTextLinks;
 	position: relative;
 	text-decoration: none;
-	@include prefix(transition, all 0.2s);
+	transition: all 0.2s;
 	&:not(.remove-line) {
 		text-decoration: underline;
 		&:active {

@@ -20,7 +20,7 @@
 			&::after {
 				display: inline-block;
 				padding-left: 0.25em;
-				@include prefix(transition, translate 0.2s ease-in-out);
+				transition: translate 0.2s ease-in-out;
 				content: ' →';
 			}
 		}

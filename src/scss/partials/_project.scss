@@ -16,7 +16,7 @@
 .bluprint-messages {
 	display: flex; // @todo stop stretching of images
 	img {
-		@include prefix(transition, all 0.4s ease-in-out);
+		transition: all 0.4s ease-in-out;
 		width: 50%;
 		position: relative;
 		&:nth-child(2) {
@@ -46,7 +46,7 @@
 	position: relative;
 	height: 799px;
 	img {
-		@include prefix(transition, all 0.4s ease-in-out);
+		transition: all 0.4s ease-in-out;
 		position: absolute;
 		transform-origin: bottom center;
 		&:first-of-type {
@@ -76,7 +76,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	img {
-		@include prefix(transition, all 0.4s ease-in-out);
+		transition: all 0.4s ease-in-out;
 		width: 50%;
 		position: relative;
 		&:first-of-type {
@@ -103,7 +103,7 @@
 		&::after {
 			display: inline-block;
 			padding-left: 0.25em;
-			@include prefix(transition, translate 0.2s ease-in-out);
+			transition: translate 0.2s ease-in-out;
 			content: ' →';
 		}
 		&:hover {
@@ -118,7 +118,7 @@
 		&::before {
 			display: inline-block;
 			padding-right: 0.25em;
-			@include prefix(transition, translate 0.2s ease-in-out);
+			transition: translate 0.2s ease-in-out;
 			content: '← ';
 		}
 		&:hover {
