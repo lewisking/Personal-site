@@ -3,12 +3,8 @@
  * @author Lewis King
  */
 
-const mozjpeg = require('imagemin-mozjpeg');
+'use strict';
 
-
-/**
- * Livereload and connect variables
- */
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({
   port: LIVERELOAD_PORT
@@ -17,26 +13,14 @@ var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
 
-/**
- * Grunt module
- */
 module.exports = function (grunt) {
 
-  /**
-   * Dynamically load npm tasks
-   */
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  /**
-   * NewStart Grunt config
-   */
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
 
-    /**
-     * Set project info
-     */
     project: {
       src: 'src',
       app: 'app',
@@ -56,12 +40,6 @@ module.exports = function (grunt) {
 	  },
 	},
 
-    /**
-     * Connect port/livereload
-     * https://github.com/gruntjs/grunt-contrib-connect
-     * Starts a local webserver and injects
-     * livereload snippet
-     */
     connect: {
       options: {
         port: 9000,
@@ -76,11 +54,6 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * JSHint
-     * https://github.com/gruntjs/grunt-contrib-jshint
-     * Manage the options inside .jshintrc file
-     */
     jshint: {
       files: ['src/js/*.js'],
       options: {
@@ -88,11 +61,6 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Concatenate JavaScript files
-     * https://github.com/gruntjs/grunt-contrib-concat
-     * Imports all .js files and appends project banner
-     */
     concat: {
       dev: {
         files: {
@@ -104,11 +72,6 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Uglify (minify) JavaScript files
-     * https://github.com/gruntjs/grunt-contrib-uglify
-     * Compresses and minifies all JavaScript files into one
-     */
     uglify: {
       dist: {
         files: {
@@ -117,11 +80,6 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Compile Sass/SCSS files
-     * https://github.com/gruntjs/grunt-contrib-sass
-     * Compiles all Sass/SCSS files and appends project banner
-     */
     sass: {
       dev: {
         options: {
@@ -141,45 +99,31 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Opens the web server in the browser
-     * https://github.com/jsoverson/grunt-open
-     */
     open: {
       server: {
         path: 'http://localhost:<%= connect.options.port %>'
       }
     },
 
-	imagemin: {
-	   static: {
-		   options: {
-			   optimizationLevel: 3,
-			   svgoPlugins: [{removeViewBox: false}],
-			   use: [mozjpeg()] // Example plugin usage
-		   },
-		   files: {
-			   'dist/img.png': 'src/img.png',
-			   'dist/img.jpg': 'src/img.jpg',
-			   'dist/img.gif': 'src/img.gif'
-		   }
-	   },
-	   dynamic: {
-		   files: [{
-			   expand: true,
-			   cwd: 'src/',
-			   src: ['**/*.{png,jpg,gif}'],
-			   dest: 'dist/'
-		   }]
-	   }
-   },
+	uncss: {
+	  dist: {
+		files: {
+		  '<%= project.assets %>/css/style.min.css': ['<%= project.app %>/{,*/}*.html']
+		}
+	  }
+    },
 
-    /**
-     * Runs tasks against changed watched files
-     * https://github.com/gruntjs/grunt-contrib-watch
-     * Watching development files and run concat/compile tasks
-     * Livereload the browser once complete
-     */
+    imagemin: {
+        dynamic: {
+            files: [{
+                expand: true,
+                cwd: '<%= project.app %>/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: '<%= project.app %>/'
+            }]
+        }
+    },
+
     watch: {
       concat: {
         files: '<%= project.src %>/js/{,*/}*.js',
@@ -200,17 +144,11 @@ module.exports = function (grunt) {
           '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
-    }
-
-
+	}
 
 
   });
-
-  /**
-   * Default task
-   * Run `grunt` on the command line
-   */
+  
   grunt.registerTask('default', [
     'sass:dev',
     'jshint',
@@ -220,16 +158,10 @@ module.exports = function (grunt) {
     'watch',
   ]);
 
-  /**
-   * Build task
-   * Run `grunt build` on the command line
-   * Then compress all JS/CSS files
-   */
   grunt.registerTask('build', [
     'sass:dist',
 	'jshint',
 	'autoprefixer',
-    'uglify',
 	'imagemin'
   ]);
 
