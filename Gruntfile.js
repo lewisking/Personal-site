@@ -117,7 +117,7 @@ module.exports = function(grunt) {
 		},
 
 		responsive_images: {
-			myTask: {
+			resize_images: {
 				options: {
 					rename: false,
 					sizes: [{
@@ -132,17 +132,17 @@ module.exports = function(grunt) {
 				}],
 			},
 		},
-		//
-		// imagemin: {
-		// 	dynamic: {
-		// 		files: [{
-		// 			expand: true,
-		// 			cwd: '<%= project.app %>/',
-		// 			src: ['**/*.{png,jpg,gif}'],
-		// 			dest: '<%= project.app %>/'
-        //     }]
-		// 	}
-		// },
+
+		tinyimg: {
+		 dynamic: {
+		   files: [{
+			 expand: true,
+			 cwd: 'app/',
+			 src: ['**/*.{png,jpg,svg}'],
+			 dest: 'app/'
+		   }]
+		 }
+	    },
 
 		watch: {
 			concat: {
@@ -177,8 +177,13 @@ module.exports = function(grunt) {
 	    'watch',
 	]);
 
-	grunt.registerTask('images', [
+	// Note, for now requires manual moving of images because it's stupid.
+	grunt.registerTask('resize_images', [
 		'responsive_images',
+	]);
+
+	grunt.registerTask('compress_images', [
+		'tinyimg',
 	]);
 
 	grunt.registerTask('build', [
@@ -186,7 +191,6 @@ module.exports = function(grunt) {
 		'jshint',
 		'autoprefixer',
 		'uncss',
-		'imagemin',
 	]);
 
 };
