@@ -1,16 +1,18 @@
 // Sass Mixins
 @import 'mixins/_fontsize.scss';
 
+// External tools
+@import 'vendor/_animate.scss';
+@import 'vendor/_normalize.scss';
+
 // Configuration/global
 @import 'config/_vars.scss';
-@import 'config/_normalize.scss';
 @import 'config/_fonts.scss';
 
 // Components
 @import 'components/_app.scss';
 @import 'components/_links.scss';
 @import 'components/_typography.scss';
-
 
 // Partials
 @import 'partials/_main.scss';
@@ -22,8 +24,3 @@
 
 // Modifiers
 @import 'modifiers/_breakpoints.scss';
-//@import 'modifiers/_print.scss';
-//@import 'modifiers/_timeline.scss';
-
-// External tools
-@import 'vendor/_animate.scss';

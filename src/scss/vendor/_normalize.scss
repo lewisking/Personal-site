@@ -19,7 +19,6 @@ video {
 	display: inline-block;
 }
 
-
 audio:not([controls]) {
 	display: none;
 	height: 0;
@@ -29,7 +28,6 @@ audio:not([controls]) {
 template {
 	display: none;
 }
-
 
 html {
 	font-family: sans-serif;
@@ -43,7 +41,6 @@ body {
 
 a {
 	background: transparent;
-	color: $colorTextDefault;
 }
 
 a:focus,

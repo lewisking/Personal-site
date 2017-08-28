@@ -4,8 +4,10 @@
 	position: absolute;
 	left: 1em;
 	top: 1em;
+	display: block;
+	width: 40px;
 	img {
-		width: 40px;
+		width: 100%;
 		height: auto;
 		display: block;
 		border-radius: 50%;
@@ -16,7 +18,7 @@
 	h1 {
 		display: inline-block;
 		line-height: 1.5;
-		font-size: 2em;
+		@include font-size(32);
 		font-family: $headingFontFamily;
 		font-weight: normal;
 		color: darken($colorTextDefault, 40%);

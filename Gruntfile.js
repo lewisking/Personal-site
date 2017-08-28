@@ -1,8 +1,3 @@
-/*!
- * NewStart Gruntfile
- * @author Lewis King
- */
-
 'use strict';
 
 var LIVERELOAD_PORT = 35729;
@@ -18,6 +13,7 @@ var mountFolder = function(connect, dir) {
 module.exports = function(grunt) {
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	var serveStatic = require('serve-static');
 
 	grunt.initConfig({
 
@@ -50,8 +46,11 @@ module.exports = function(grunt) {
 			livereload: {
 				options: {
 					middleware: function(connect) {
-						return [lrSnippet, mountFolder(connect, 'app')];
-					}
+		            return [
+						serveStatic('app'),
+						connect().use('/app', serveStatic('./app')),
+		            ];
+		          }
 				}
 			}
 		},
@@ -164,11 +163,19 @@ module.exports = function(grunt) {
 				  '<%= project.app %>/projects/{,*/}*.html',
 		          '<%= project.assets %>/css/*.css',
 		          '<%= project.assets %>/js/{,*/}*.js',
-				  '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+				  '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
 				  '<%= project.assets %>/projects/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 		        ]
 			}
-		}
+		},
+
+		stripCssComments: {
+		   dist: {
+			   files: {
+				   '<%= project.assets %>/css/style.min.css': '<%= project.assets %>/css/style.min.css'
+			   }
+		   }
+	   }
 
 	});
 
@@ -199,6 +206,7 @@ module.exports = function(grunt) {
 		'uglify',
 		'autoprefixer',
 		'uncss',
+		'stripCssComments',
 	]);
 
 };

@@ -1,7 +1,26 @@
 // Responsive things
 
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 650px) {
 
+	.icon-me {
+		position: static;
+		margin-left: 5%;
+		margin-top: 2em;
+	}
+
+	.container {
+		padding: 3em 0 0 0;
+		&.container-contact {
+			padding-bottom: 3em;
+		}
+	}
+
+	.container-introduction {
+		h1 {
+			@include font-size(24);
+			line-height: 1.8;
+		}
+	}
 
 }
 
