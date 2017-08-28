@@ -134,14 +134,14 @@ module.exports = function(grunt) {
 		},
 
 		tinyimg: {
-		 dynamic: {
-		   files: [{
-			 expand: true,
-			 cwd: 'app/',
-			 src: ['**/*.{png,jpg,svg}'],
-			 dest: 'app/'
-		   }]
-		 }
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'app/',
+					src: ['**/*.{png,jpg,svg}'],
+					dest: 'app/'
+				}]
+			}
 	    },
 
 		watch: {
@@ -177,18 +177,20 @@ module.exports = function(grunt) {
 	    'watch',
 	]);
 
-	// Note, for now requires manual moving of images because it's stupid.
-	grunt.registerTask('resize_images', [
+	// Note, for now requires manual moving of images because it's stupid, but good for a check if I've made images large from screenshots
+	grunt.registerTask('resize', [
 		'responsive_images',
 	]);
 
-	grunt.registerTask('compress_images', [
+	// Note, seperate from build task for now as it'll keep compressing till images become unusable otherwise
+	grunt.registerTask('compress', [
 		'tinyimg',
 	]);
 
 	grunt.registerTask('build', [
 		'sass:dist',
 		'jshint',
+		'uglify',
 		'autoprefixer',
 		'uncss',
 	]);
