@@ -6,9 +6,11 @@
 'use strict';
 
 var LIVERELOAD_PORT = 35729;
+
 var lrSnippet = require('connect-livereload')({
 	port: LIVERELOAD_PORT
 });
+
 var mountFolder = function(connect, dir) {
 	return connect.static(require('path').resolve(dir));
 };
@@ -26,11 +28,11 @@ module.exports = function(grunt) {
 			app: 'app',
 			assets: '<%= project.app %>/assets',
 			css: [
-		        '<%= project.src %>/scss/style.scss'
-		      ],
+				'<%= project.src %>/scss/style.scss'
+			],
 			js: [
-		        '<%= project.src %>/js/*.js'
-		      ]
+				'<%= project.src %>/js/*.js'
+			]
 		},
 
 		autoprefixer: {
@@ -117,7 +119,7 @@ module.exports = function(grunt) {
 		},
 
 		responsive_images: {
-			resize_images: {
+			default: {
 				options: {
 					rename: false,
 					sizes: [{
@@ -134,7 +136,7 @@ module.exports = function(grunt) {
 		},
 
 		tinyimg: {
-			dynamic: {
+			default: {
 				files: [{
 					expand: true,
 					cwd: 'app/',
@@ -159,15 +161,18 @@ module.exports = function(grunt) {
 				},
 				files: [
 		          '<%= project.app %>/{,*/}*.html',
+				  '<%= project.app %>/projects/{,*/}*.html',
 		          '<%= project.assets %>/css/*.css',
 		          '<%= project.assets %>/js/{,*/}*.js',
-		          '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+				  '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+				  '<%= project.assets %>/projects/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 		        ]
 			}
 		}
 
 	});
 
+	// Development grunt task
 	grunt.registerTask('default', [
 	    'sass:dev',
 	    'jshint',
@@ -177,16 +182,17 @@ module.exports = function(grunt) {
 	    'watch',
 	]);
 
-	// Note, for now requires manual moving of images because it's stupid, but good for a check if I've made images large from screenshots
+	// For now requires manual moving of images because it's stupid, but good to before deploying
 	grunt.registerTask('resize', [
 		'responsive_images',
 	]);
 
-	// Note, seperate from build task for now as it'll keep compressing till images become unusable otherwise
+	// Seperate from build task for now as it'll keep compressing till images become unusable otherwise
 	grunt.registerTask('compress', [
 		'tinyimg',
 	]);
 
+	// Final deploy grunt task
 	grunt.registerTask('build', [
 		'sass:dist',
 		'jshint',
