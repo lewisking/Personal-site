@@ -28,15 +28,15 @@ var
 // Run server
 gulp.task('browser-sync', function() {
 
-	if (argv.production === true) {
-		console.log('production-mode');
-	} else {
+	// Only do the following if --production flag is off
+	if (argv.production === false) {
 		browserSync.init(['./dist/stylesheets/*.css', './dist/javascript/**/*.js'], {
 			server: {
 				baseDir: './dist'
 			}
 		});
 	}
+
 });
 
 // Move and minify HTML
@@ -110,8 +110,13 @@ gulp.task('restart', function(cb) {
 
 // All of the things
 gulp.task('default', ['html', 'stylesheets', 'images', 'javascript', 'browser-sync'], function() {
-	gulp.watch(['src/*.html', 'src/*/*/*.html'], ['html', reload]);
-	gulp.watch(['src/assets/scss/*.scss', 'src/assets/scss/*/*.scss'], ['stylesheets']);
-	gulp.watch(['src/*/images/*.{png,jpg,jpeg}', 'src/*/*/assets/*/*.{png,jpg,jpeg}'], ['images']);
-	gulp.watch('src/assets/js/*.js', ['javascript']);
+
+	// Only do the following if --production flag is off
+	if (argv.production === false) {
+		gulp.watch(['src/*.html', 'src/*/*/*.html'], ['html', reload]);
+		gulp.watch(['src/assets/scss/*.scss', 'src/assets/scss/*/*.scss'], ['stylesheets']);
+		gulp.watch(['src/*/images/*.{png,jpg,jpeg}', 'src/*/*/assets/*/*.{png,jpg,jpeg}'], ['images']);
+		gulp.watch('src/assets/js/*.js', ['javascript']);
+	}
+
 });
