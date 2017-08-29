@@ -12,10 +12,26 @@ var
 	reload = browserSync.reload
 ;
 
+// Run server
 gulp.task('browser-sync', function() {
     browserSync.init(['./dist/stylesheets/*.css', './dist/javascript/**/*.js'], {
         server: {
             baseDir: './dist'
         }
     });
+});
+
+// Move and minify HTML
+gulp.task('html', function() {
+    return gulp.src(['src/*.html', 'src/*/*/.html'])
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            minifyJS: true
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
+
+gulp.task('default', ['browser-sync'], function() {
+	console.log('test');
 });
