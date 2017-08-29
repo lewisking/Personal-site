@@ -10,6 +10,11 @@ var
 	px2rem = require('gulp-px2rem'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-sass'),
+
+
+	imageResize = require('gulp-image-resize');
+	tinypng = require('gulp-tinypng-compress');
+
 	reload = browserSync.reload
 ;
 
@@ -33,7 +38,7 @@ gulp.task('html', function() {
 });
 
 
-// Compile sass and minify
+// Move, compile sass and minify
 gulp.task('stylesheets', function() {
     return gulp.src('src/assets/scss/style.scss')
         .pipe(sass({
@@ -48,7 +53,7 @@ gulp.task('stylesheets', function() {
         .pipe(browserSync.stream());
 });
 
-// Compile JS and minify
+// Move, compile JS and minify
 gulp.task('javascript', function() {
     return gulp.src('src/assets/js/*.js')
         .pipe(concat('scripts.min.js'))
@@ -56,10 +61,27 @@ gulp.task('javascript', function() {
         .pipe(gulp.dest('dist/assets/js'));
 });
 
+// Move, resize and compress images
+gulp.task('images', function () {
+	gulp.src(['src/assets/*/*.{png,jpg,jpeg}', 'src/projects/*/assets/*/*.{png,jpg,jpeg}'])
+	.pipe(gulp.dest('images'));
+		.pipe(imageResize({
+			width : 1400,
+			upscale : false
+		}))
+		.pipe(tinypng({
+			key: 'API_KEY',
+			sigFile: 'images/.tinypng-sigs',
+			log: true
+		}))
+		.pipe(gulp.dest('disttest'));
+});
+
 // Restart from scratch
 gulp.task('restart', function(cb) {
     del(['dist'], cb)
 });
 
+// Run gulp
 gulp.task('default', ['browser-sync', 'html', 'stylesheets', 'javascript'], function() {
 });
