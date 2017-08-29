@@ -27,20 +27,28 @@ var
 
 // Run server
 gulp.task('browser-sync', function() {
-    browserSync.init(['./dist/stylesheets/*.css', './dist/javascript/**/*.js'], {
-        server: {
-            baseDir: './dist'
-        }
-    });
+
+	if (argv.production === true) {
+		console.log('production-mode');
+	} else {
+		browserSync.init(['./dist/stylesheets/*.css', './dist/javascript/**/*.js'], {
+			server: {
+				baseDir: './dist'
+			}
+		});
+	}
 });
 
 // Move and minify HTML
 gulp.task('html', function() {
 	return gulp.src(['src/*.html', 'src/*/*/*.html'])
-        .pipe(htmlmin({
+
+		// Only do the following if --production flag is on
+		.pipe(gulpif(argv.production, htmlmin({
             collapseWhitespace: true,
             minifyJS: true
-        }))
+        })))
+
         .pipe(gulp.dest('dist'));
 });
 
@@ -54,9 +62,12 @@ gulp.task('stylesheets', function() {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-		.pipe(uncss({
+
+		// Only do the following if --production flag is on
+		.pipe(gulpif(argv.production, uncss({
             html: ['src/*.html', 'src/projects/*/*.html']
-        }))
+        })))
+
         .pipe(gulp.dest('dist/assets/css/'))
 });
 
@@ -73,30 +84,28 @@ gulp.task('javascript', function() {
 // Move, resize and compress images
 gulp.task('images', function() {
     return gulp.src(['src/*/images/*.{png,jpg,jpeg}', 'src/*/*/assets/*/*.{png,jpg,jpeg}'])
-		.pipe(imageResize({
+
+		// Only do the following if --production flag is on
+		.pipe(gulpif(argv.production, imageResize({
 			width : 1400,
 			upscale : false
-		}))
-        .pipe(imagemin([
+		})))
+
+		// Only do the following if --production flag is on
+        .pipe(gulpif(argv.production, imagemin([
             imageminJpegRecompress({
                 progressive: true,
                 max: 80,
                 min: 70
             }),
-        ]))
+        ])))
+
         .pipe(gulp.dest('dist'));
 });
-
-// Set production flag
-var isProduction = false;
-if (argv.production === true) {
-  isProduction = true;
-}
 
 // Restart from scratch
 gulp.task('restart', function(cb) {
     del(['dist'], cb)
-	console.log(isProduction);
 });
 
 // All of the things
