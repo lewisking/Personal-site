@@ -4,6 +4,8 @@ var
 	browserSync = require('browser-sync'),
 	del = require('del'),
 	reload = browserSync.reload,
+	gulpif = require('gulp-if'),
+	argv = require('yargs').argv,
 
 	// HTML
 	htmlmin = require('gulp-htmlmin'),
@@ -46,20 +48,6 @@ gulp.task('html', function() {
 gulp.task('stylesheets', function() {
     return gulp.src('src/assets/scss/style.scss')
         .pipe(sass({
-            outputStyle: 'expanded'
-        }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest('dist/assets/css/'))
-        .pipe(browserSync.stream());
-});
-
-// Move, compile sass and minify
-gulp.task('stylesheets_commit', function() {
-    return gulp.src('src/assets/scss/style.scss')
-        .pipe(sass({
             outputStyle: 'compressed'
         }))
         .pipe(autoprefixer({
@@ -82,14 +70,8 @@ gulp.task('javascript', function() {
 });
 
 
-// Move images
-gulp.task('images', function() {
-    return gulp.src(['src/*/images/*.{png,jpg,jpeg}', 'src/*/*/assets/*/*.{png,jpg,jpeg}'])
-        .pipe(gulp.dest('dist'));
-});
-
 // Move, resize and compress images
-gulp.task('images_commit', function() {
+gulp.task('images', function() {
     return gulp.src(['src/*/images/*.{png,jpg,jpeg}', 'src/*/*/assets/*/*.{png,jpg,jpeg}'])
 		.pipe(imageResize({
 			width : 1400,
@@ -105,22 +87,22 @@ gulp.task('images_commit', function() {
         .pipe(gulp.dest('dist'));
 });
 
-
-
+// Set production flag
+var isProduction = false;
+if (argv.production === true) {
+  isProduction = true;
+}
 
 // Restart from scratch
 gulp.task('restart', function(cb) {
     del(['dist'], cb)
+	console.log(isProduction);
 });
 
-// Default gulp task to run site locally and set up browsersync + dest directory
+// All of the things
 gulp.task('default', ['html', 'stylesheets', 'images', 'javascript', 'browser-sync'], function() {
 	gulp.watch(['src/*.html', 'src/*/*/*.html'], ['html', reload]);
 	gulp.watch(['src/assets/scss/*.scss', 'src/assets/scss/*/*.scss'], ['stylesheets']);
 	gulp.watch(['src/*/images/*.{png,jpg,jpeg}', 'src/*/*/assets/*/*.{png,jpg,jpeg}'], ['images']);
 	gulp.watch('src/assets/js/*.js', ['javascript']);
-});
-
-// Gulp task before commit
-gulp.task('commit', ['html', 'stylesheets_commit', 'images_commit', 'javascript'], function() {
 });
