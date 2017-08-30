@@ -49,7 +49,7 @@ gulp.task('html', function() {
 	return gulp.src('src/**/*.html')
 		.pipe(fileinclude({
 			prefix: '@@',
-			basepath: '@file'
+			basepath: '@file',
 		}))
 
 		// Only do the following if --production flag is on
@@ -111,9 +111,9 @@ gulp.task('images', function() {
 });
 
 
-// Delete _include folders, no need for these for production
-gulp.task('remove_includes', function() {
-	del(['dist/**/_includes']).then(paths => {
+// Delete _partials folders, no need for these for production
+gulp.task('remove_partials', function() {
+	del(['dist/**/_partials']).then(paths => {
 	    console.log('Deleted files and folders:\n', paths.join('\n'));
 	});
 });
