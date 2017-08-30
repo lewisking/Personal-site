@@ -9,6 +9,8 @@ var
 
 	// HTML
 	htmlmin = require('gulp-htmlmin'),
+	fileinclude = require('gulp-file-include'),
+
 
 	// CSS
 	autoprefixer = require('gulp-autoprefixer'),
@@ -45,6 +47,10 @@ gulp.task('browser-sync', function() {
 // Move and minify HTML
 gulp.task('html', function() {
 	return gulp.src('src/**/*.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file'
+		}))
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, htmlmin({
@@ -52,7 +58,7 @@ gulp.task('html', function() {
             minifyJS: true
         })))
 
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
 });
 
 // Move, compile sass and minify
@@ -108,8 +114,8 @@ gulp.task('images', function() {
 
 
 // Restart from scratch
-gulp.task('restart', function(cb) {
-    del(['dist'], cb)
+gulp.task('restart', function() {
+    del(['dist'])
 });
 
 // All of the things
@@ -123,4 +129,9 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'javascript', 'browser-sy
 		gulp.watch('src/**/*.{png,jpg,jpeg}', ['images', reload]);
 	}
 
+});
+
+// Remove _includes files, not needed for production
+gulp.task('remove_includes', function() {
+    del(['dist/**/_includes'])
 });
