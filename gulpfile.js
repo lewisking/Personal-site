@@ -61,6 +61,13 @@ gulp.task('html', function() {
         .pipe(gulp.dest('dist'))
 });
 
+// Delete _include folders, no need for these for production
+gulp.task('remove_includes', function() {
+	del(['dist/**/_includes']).then(paths => {
+	    console.log('Deleted files and folders:\n', paths.join('\n'));
+	});
+});
+
 // Move, compile sass and minify
 gulp.task('stylesheets', function() {
     return gulp.src('src/assets/scss/style.scss')
@@ -129,9 +136,4 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'javascript', 'browser-sy
 		gulp.watch('src/**/*.{png,jpg,jpeg}', ['images', reload]);
 	}
 
-});
-
-// Remove _includes files, not needed for production
-gulp.task('remove_includes', function() {
-    del(['dist/**/_includes'])
 });
