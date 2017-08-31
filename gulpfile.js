@@ -91,6 +91,14 @@ gulp.task('javascript', function() {
         .pipe(gulp.dest('dist/assets/js'));
 });
 
+
+// Move favicon
+gulp.task('favicon', function() {
+    return gulp.src('src/favicon.ico')
+        .pipe(gulp.dest('dist'));
+});
+
+
 // Move, resize and compress images
 gulp.task('images', function() {
     return gulp.src('src/**/*.{png,jpg,jpeg}')
@@ -127,7 +135,7 @@ gulp.task('restart', function() {
 });
 
 // All of the things
-gulp.task('default', ['html', 'stylesheets', 'images', 'javascript', 'browser-sync'], function() {
+gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
