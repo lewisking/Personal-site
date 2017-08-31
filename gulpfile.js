@@ -27,8 +27,10 @@ var
 	imageResize = require('gulp-image-resize');
 ;
 
-const depcheck = require('gulp-depcheck');
-
+// Output errors
+const onError = (err) => {
+    console.log(err);
+};
 
 // Run server
 gulp.task('browser-sync', function() {
@@ -50,6 +52,7 @@ gulp.task('html', function() {
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file',
+			indent: true,
 		}))
 
 		// Only do the following if --production flag is on
