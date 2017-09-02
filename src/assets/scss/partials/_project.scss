@@ -96,6 +96,21 @@
 	}
 }
 
+.image-buster-real-size {
+	display: inline-block;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	img {
+		width: 50%;
+		height: auto;
+		margin: auto;
+		border-radius: 3px;
+		display: block;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.13);
+	}
+}
+
+
 .container-project-link {
 	padding-bottom: 7em;
 	display: flex;
