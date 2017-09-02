@@ -148,8 +148,16 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 
 
 });
 
+
+
 // Publish to github pages
-gulp.task('deploy', function() {
+gulp.task('gh-upload', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
+});
+
+
+// All of the things
+gulp.task('deploy', ['remove_partials', 'gh-upload'], function() {
+
 });
