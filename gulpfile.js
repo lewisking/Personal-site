@@ -6,6 +6,7 @@ var
 	reload = browserSync.reload,
 	gulpif = require('gulp-if'),
 	argv = require('yargs').argv,
+	ghPages = require('gulp-gh-pages');
 
 	// HTML
 	htmlmin = require('gulp-htmlmin'),
@@ -145,4 +146,10 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 
 		gulp.watch('src/**/*.{png,jpg,jpeg}', ['images', reload]);
 	}
 
+});
+
+// Publish to github pages
+gulp.task('gh-pages', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
