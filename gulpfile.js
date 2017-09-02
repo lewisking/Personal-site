@@ -149,7 +149,7 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 
 });
 
 // Publish to github pages
-gulp.task('gh-pages', function() {
+gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
