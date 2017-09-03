@@ -4,5 +4,5 @@
   { "slug": "tomorrowsweb", "title": "Tomorrow's Web", "text": "Running Tomorrow's Web; a series of conferences/meet-ups in London for young designers and developers", "disciplines": "Organisation &bull; Branding &bull; Social Media &bull; Management" },
   { "slug": "checkout", "title": "the bluCommerce checkout", "text": "Building a fully responsive checkout from the ground up to be fast, friendly and configurable.", "disciplines": "Frontend &bull; UX Consultation &bull; Research &bull; Maintenance" },
   { "slug": "cmseditor", "title": "the CMS editor", "text": "Providing UX consultation and front-end build on a new in-line CMS editor for eCommerce sites", "disciplines": "Frontend &bull; UX Consultation &bull; Maintenance" },
-  { "slug": "ecommerce", "title": "my eCommerce builds", "text": "Building the front-end for some of the UK's biggest eCommerce retailers such as Route One, Robert Welch, Whittard, Teapigs & more", "disciplines": "Frontend &bull; UX Consultation &bull; Maintenance &bull; Training" }
+  { "slug": "ecommerce", "title": "my eCommerce builds", "text": "Building the front-end for some of the UK's biggest eCommerce retailers such as Route One, Robert Welch, Whittard, & Teapigs", "disciplines": "Frontend &bull; UX Consultation &bull; Maintenance &bull; Training" }
 ]

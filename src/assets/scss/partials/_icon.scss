@@ -5,21 +5,23 @@
 	left: 1em;
 	top: 1em;
 	display: block;
-	width: 40px;
+	background: $colorSiteBackground;
+	padding: 5px;
+	z-index: 2;
+	white-space: nowrap;
+	border-radius: 40px;
 	img {
-		width: 100%;
+		width: 40px;
+		height: 40px;
 		height: auto;
-		display: block;
+		display: inline-block;
+		vertical-align: middle;
 		border-radius: 50%;
 	}
 
 	span {
-		position: absolute;
-		left: 40px;
-		padding-left: 0.5em;
-		top: 0;
+		padding: 0 0.5em;
 		line-height: 40px;
-		white-space: nowrap;
 		display: none;
 	}
 }
@@ -27,7 +29,8 @@
 body:not(.is-index) {
 	.icon-me {
 		span {
-			display: block;
+			display: inline-block;
+			vertical-align: middle;
 		}
 	}
 }
