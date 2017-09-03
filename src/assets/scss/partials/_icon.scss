@@ -1,0 +1,33 @@
+// Icon of me
+
+.icon-me {
+	position: fixed;
+	left: 1em;
+	top: 1em;
+	display: block;
+	width: 40px;
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 50%;
+	}
+
+	span {
+		position: absolute;
+		left: 40px;
+		padding-left: 0.5em;
+		top: 0;
+		line-height: 40px;
+		white-space: nowrap;
+		display: none;
+	}
+}
+
+body:not(.is-index) {
+	.icon-me {
+		span {
+			display: block;
+		}
+	}
+}
