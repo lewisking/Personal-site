@@ -122,7 +122,6 @@ gulp.task('images', function() {
         .pipe(gulp.dest('dist'));
 });
 
-
 // Delete _partials folders, no need for these for production
 gulp.task('remove_partials', function() {
 	del(['dist/**/_partials']).then(paths => {
@@ -148,16 +147,8 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 
 
 });
 
-
-
 // Publish to github pages
-gulp.task('gh-upload', function() {
+gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
-});
-
-
-// All of the things
-gulp.task('deploy', ['remove_partials', 'gh-upload'], function() {
-
 });
