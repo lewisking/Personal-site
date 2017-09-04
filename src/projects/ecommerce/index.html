@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('@@webRoot/_partials/header.html', {"title": "Project — eCommerce builds"})
+</head>
+
+
+<body>
+
+	@@include('@@webRoot/_partials/icon.html')
+
+	<header class="container container-introduction" id="introduction">
+		<div class="animated fadeInUp max-width">
+			<h2>Project</h2>
+			<h1>Building the front-end for some of the UK's biggest eCommerce retailers such as Route One, Robert Welch, Whittard, Teapigs &amp; more</h1>
+		</div>
+	</header>
+
+	<div class="animated fadeIn delay max-width">
+		<section class="container container-about" id="about">
+			<h2>An Introduction</h2>
+
+			<p>Whilst at blubolt I built the front-end for some of the UK's biggest eCommerce retailers. When I started at the company I was the only front-end developer by title, so built absolutely every site that left our doors! However, after a few years I started to hire into and manage a small front-end team. This roll shift meant I oversaw smaller eCommerce builds, whilst still getting my hands dirty and coding the front-end for our bigger clients. It also meant I had more time to spend on <a href="@@webRoot/projects/bluprint" title="Read about bluprint, a live style guide &amp; CSS library I created">internal projects</a> and tooling. At at my time of leaving the company the front-end team was 6 people, I am immensely proud of what we achieved and will miss them all dearly.</p>
+
+			<div class="container-image-buster container-image-buster-spread spread-ecommerce">
+				<img src="assets/images/client2.jpg" title="A screenshot of Route One">
+				<img src="assets/images/client1.jpg" title="A screenshot of MiPac">
+				<img src="assets/images/client3.jpg" title="A screenshot of Teapigs">
+			</div>
+
+			<h2>Example sites</h2>
+
+			<p>The best way to see my work is to check out the live sites yourself! Below are some links to projects I have built the entire front-end on:</p>
+
+			<ul class="ecommerce-site-list">
+				@@loop('_partials/sites.html', 'projects/ecommerce/_partials/sites.json')
+			</ul>
+
+		</section>
+
+		<footer class="container container-project-link" id="project-link">
+			<a href="@@webRoot/projects/cmseditor" title="Visit Previous Project" class="remove-line previous-link">Visit Previous <span>Project</span></a>
+		</footer>
+	</div>
+
+	<script src="@@webRoot/assets/js/scripts.min.js" data-no-instant></script>
+	
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.9;
+	font-family: $defaultFontFamily;
+	font-weight: $defaultFontWeight;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $colorSiteBackground;
+}
+
+// General animation delays
+
+.delay {
+	animation-delay: 1s;
+}

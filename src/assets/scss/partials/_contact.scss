@@ -1,0 +1,17 @@
+// Contact section
+
+.container-contact {
+	padding-bottom: 7em;
+	.twitter {
+		color: $twitterColor;
+	}
+	.spotify {
+		color: $spotifyColor;
+	}
+	.instagram {
+		color: $instagramColor;
+	}
+	.linkedin {
+		color: $linkedinColor;
+	}
+}

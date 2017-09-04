@@ -1,0 +1,40 @@
+// Current work
+
+.container-current-work {
+	h2 {
+		margin-bottom: 1em;
+	}
+}
+
+.current-item {
+	width: 100%;
+	margin: 0 0 3em 0;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	p {
+		margin: 0;
+		&:first-of-type {
+			margin: 0;
+			&::after {
+				display: inline-block;
+				padding-left: 0.25em;
+				transition: translate 0.2s ease-in-out;
+				content: ' →';
+			}
+		}
+	}
+
+	a:hover p {
+		&::after {
+			transform: translateX(5px);
+		}
+	}
+
+	small {
+		@include font-size(12);
+		text-transform: uppercase;
+		color: lighten($colorTextDefault,20%);
+	}
+}

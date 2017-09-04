@@ -1,0 +1,80 @@
+// Responsive things
+
+@media screen and (max-width: 970px) {
+
+	.container-image-buster-spread {
+		width: 80%;
+		height: 533px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.spread-ecommerce {
+		height: 764px;
+	}
+
+}
+
+@media screen and (max-width: 750px) {
+
+	.icon-me {
+		position: static;
+		margin: 2em auto 0 auto;
+		max-width: 600px;
+		padding: 0;
+		width: 90%;
+	}
+
+	.container {
+		padding: 3em 0 0 0;
+		&.container-contact,
+		&.container-project-link {
+			padding-bottom: 3em;
+		}
+	}
+
+	.container-introduction {
+		h1 {
+			@include font-size(22);
+			line-height: 1.8;
+		}
+	}
+
+	.container-image-buster {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.container-image-buster-spread {
+		height: auto;
+		img {
+			position: static;
+			transform: none !important;
+		}
+		img:not(:first-of-type) {
+			margin-top: -70%;
+		}
+		&.spread-ecommerce {
+			img:not(:first-of-type) {
+				margin-top: -120%;
+			}
+		}
+	}
+
+	.image-buster-real-size img {
+		width: 100%;
+	}
+
+	.container-project-link {
+		span {
+			display: none;
+		}
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+}

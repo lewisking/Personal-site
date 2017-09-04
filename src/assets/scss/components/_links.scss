@@ -1,0 +1,15 @@
+// Link styles
+
+a {
+	color: $colorTextLinks;
+	position: relative;
+	text-decoration: none;
+	transition: all 0.2s;
+	&:not(.remove-line) {
+		text-decoration: underline;
+		&:active {
+			position: relative;
+			top: 1px;
+		}
+	}
+}
