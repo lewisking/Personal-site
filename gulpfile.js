@@ -41,7 +41,6 @@ path = {
 		js: 'src/assets/js/*.js',
 		partials: '',
 		deploy: '',
-		cname: 'src/CNAME',
 	},
 	dist: {
 		html: 'dist',
@@ -52,7 +51,6 @@ path = {
 		js: 'dist/assets/js',
 		partials: 'dist/**/_partials',
 		deploy: './dist/**/*',
-		cname: 'dist/CNAME',
 	}
 }
 
@@ -120,11 +118,6 @@ gulp.task('javascript', function() {
 		.pipe(gulp.dest(path.dist.js));
 });
 
-// Move CNAME file
-gulp.task('cname', function() {
-	return gulp.src(path.src.cname)
-		.pipe(gulp.dest(path.dist.cname));
-});
 
 // Move favicon
 gulp.task('favicon', function() {
@@ -170,7 +163,7 @@ gulp.task('restart', function() {
 
 
 // All of the things
-gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
+gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
