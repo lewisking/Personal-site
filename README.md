@@ -1,9 +1,11 @@
-# My Personal Portfolio
-> This is my personal portfolio. Not much else to say on that!
+# My personal site
+> This is the code for my personal site, using a customised gulp workflow and my own boilerplate.
 
 ## Installation
 1. Run "npm install" to bring down all dependencies.
-2. Run "brew install imagemagick" & "brew install graphicsmagick" to install image compressors.
-3. Run "gulp" to kick off BrowserSync, Sass & creation of the dist folder.
-4. Run "gulp --production" to build a production ready dist folder where all images are compressed, JS & CSS are minified, Autoprefixer and UnCSS are run.
-6. Run "gulp remove_partials" and then "gulp deploy" to push the dist folder to gh-pages branch and to remove redundant partial files that get compiled.
+2. Run "brew install imagemagick" & "brew install graphicsmagick" to install image compressors. (I might fix this but right now the reason for this is to make sure images are no larger than 1400px wide).
+3. Run "gulp" to kick off development on your local machine and run a local server with BrowserSync. 
+4. When ready to create a compressed production build, run "gulp --production".
+5. Run "gulp remove_partials" and then "gulp deploy" to push the dist folder to a gh-pages branch and to remove redundant partial files that get compiled.
+
+If you would like to start from scratch, run "gulp restart" and the dist folder will be wiped.
