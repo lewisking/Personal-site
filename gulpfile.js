@@ -35,6 +35,7 @@ path = {
 	src: {
 		html: 'src/**/*.html',
 		sass: 'src/assets/scss/style.scss',
+		sasswatch: 'src/**/*.scss',
 		images: 'src/**/*.{png,jpg,jpeg}',
 		favicon: 'src/favicon.ico',
 		js: 'src/assets/js/*.js',
@@ -165,7 +166,7 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
 		gulp.watch(path.src.html, ['html', reload]);
-		gulp.watch(path.src.sass, ['stylesheets', reload]);
+		gulp.watch(path.src.sasswatch, ['stylesheets', reload]);
 		gulp.watch(path.src.js, ['javascript', reload]);
 		gulp.watch(path.src.images, ['images', reload]);
 	}

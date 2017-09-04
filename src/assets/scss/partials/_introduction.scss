@@ -2,7 +2,6 @@
 
 .container-introduction {
 	h1 {
-		display: inline-block;
 		line-height: 1.5;
 		@include font-size(32);
 		font-family: $headingFontFamily;
