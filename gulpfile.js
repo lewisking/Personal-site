@@ -86,7 +86,7 @@ gulp.task('html', function() {
 			minifyJS: true
 		})))
 
-		.pipe(gulp.dest(path.dist.html))
+		.pipe(gulp.dest(path.dist.html));
 });
 
 // Move, compile sass and minify
@@ -105,7 +105,7 @@ gulp.task('stylesheets', function() {
 			html: path.src.html
 		})))
 
-		.pipe(gulp.dest(path.dist.sass))
+		.pipe(gulp.dest(path.dist.sass));
 });
 
 // Move, compile JS and minify
@@ -130,8 +130,8 @@ gulp.task('images', function() {
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, imageResize({
-			width : 1400,
-			upscale : false
+			width: 1400,
+			upscale: false
 		})))
 
 		// Only do the following if --production flag is on
@@ -156,7 +156,7 @@ gulp.task('remove_partials', function() {
 
 // Restart from scratch
 gulp.task('restart', function() {
-	del(path.dist.html)
+	del(path.dist.html);
 });
 
 
