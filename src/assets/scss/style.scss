@@ -1,13 +1,13 @@
 // Sass Mixins
 @import 'mixins/_fontsize.scss';
 
-// External tools
-@import 'vendor/_animate.scss';
-@import 'vendor/_normalize.scss';
-
 // Configuration/global
 @import 'config/_vars.scss';
 @import 'config/_fonts.scss';
+
+// External tools
+@import 'vendor/_animate.scss';
+@import 'vendor/_normalize.scss';
 
 // Components
 @import 'components/_app.scss';
