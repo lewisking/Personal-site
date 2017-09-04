@@ -30,7 +30,7 @@ var
 
 // Output errors
 const onError = (err) => {
-    console.log(err);
+	console.log(err);
 };
 
 // Run server
@@ -58,51 +58,51 @@ gulp.task('html', function() {
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, htmlmin({
-            collapseWhitespace: true,
-            minifyJS: true
-        })))
+			collapseWhitespace: true,
+			minifyJS: true
+		})))
 
-        .pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist'))
 });
 
 // Move, compile sass and minify
 gulp.task('stylesheets', function() {
-    return gulp.src('src/assets/scss/style.scss')
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
+	return gulp.src('src/assets/scss/style.scss')
+		.pipe(sass({
+			outputStyle: 'compressed'
+		}))
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, uncss({
-            html: ['src/**/*.html']
-        })))
+			html: ['src/**/*.html']
+		})))
 
-        .pipe(gulp.dest('dist/assets/css/'))
+		.pipe(gulp.dest('dist/assets/css/'))
 });
 
 // Move, compile JS and minify
 gulp.task('javascript', function() {
-    return gulp.src('src/assets/js/*.js')
-        .pipe(concat('scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/assets/js'));
+	return gulp.src('src/assets/js/*.js')
+		.pipe(concat('scripts.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/assets/js'));
 });
 
 
 // Move favicon
 gulp.task('favicon', function() {
-    return gulp.src('src/favicon.ico')
-        .pipe(gulp.dest('dist'));
+	return gulp.src('src/favicon.ico')
+		.pipe(gulp.dest('dist'));
 });
 
 
 // Move, resize and compress images
 gulp.task('images', function() {
-    return gulp.src('src/**/*.{png,jpg,jpeg}')
+	return gulp.src('src/**/*.{png,jpg,jpeg}')
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, imageResize({
@@ -111,28 +111,29 @@ gulp.task('images', function() {
 		})))
 
 		// Only do the following if --production flag is on
-        .pipe(gulpif(argv.production, imagemin([
-            imageminJpegRecompress({
-                progressive: true,
-                max: 85,
-                min: 75
-            }),
-        ])))
+		.pipe(gulpif(argv.production, imagemin([
+			imageminJpegRecompress({
+				progressive: true,
+				max: 85,
+				min: 75
+			}),
+		])))
 
-        .pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('dist'));
 });
 
 // Delete _partials folders, no need for these for production
 gulp.task('remove_partials', function() {
 	del(['dist/**/_partials']).then(paths => {
-	    console.log('Deleted files and folders:\n', paths.join('\n'));
+		console.log('Deleted files and folders:\n', paths.join('\n'));
 	});
 });
 
 // Restart from scratch
 gulp.task('restart', function() {
-    del(['dist'])
+	del(['dist'])
 });
+
 
 // All of the things
 gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
@@ -149,6 +150,6 @@ gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 
 
 // Publish to github pages
 gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+	return gulp.src('./dist/**/*')
+		.pipe(ghPages());
 });
