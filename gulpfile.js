@@ -28,9 +28,33 @@ var
 	imageResize = require('gulp-image-resize');
 ;
 
+
+// Set up config and paths
+
+path = {
+	src: {
+		html: 'src/**/*.html',
+		sass: 'src/assets/scss/style.scss',
+		sasswatch: 'src/**/*.scss',
+		images: 'src/**/*.{png,jpg,jpeg}',
+		favicon: 'src/favicon.ico',
+		js: 'src/assets/js/*.js',
+		partials: '',
+	},
+	dist: {
+		html: 'dist',
+		sass: 'dist/assets/css',
+		images: 'dist',
+		favicon: 'dist',
+		js: 'dist/assets/js',
+		partials: 'dist/**/_partials',
+		deploy: './dist/**/*',
+	}
+}
+
 // Output errors
 const onError = (err) => {
-    console.log(err);
+	console.log(err);
 };
 
 // Run server
@@ -49,7 +73,7 @@ gulp.task('browser-sync', function() {
 
 // Move and minify HTML
 gulp.task('html', function() {
-	return gulp.src('src/**/*.html')
+	return gulp.src(path.src.html)
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file',
@@ -58,51 +82,51 @@ gulp.task('html', function() {
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, htmlmin({
-            collapseWhitespace: true,
-            minifyJS: true
-        })))
+			collapseWhitespace: true,
+			minifyJS: true
+		})))
 
-        .pipe(gulp.dest('dist'))
+		.pipe(gulp.dest(path.dist.html))
 });
 
 // Move, compile sass and minify
 gulp.task('stylesheets', function() {
-    return gulp.src('src/assets/scss/style.scss')
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
+	return gulp.src(path.src.sass)
+		.pipe(sass({
+			outputStyle: 'compressed'
+		}))
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, uncss({
-            html: ['src/**/*.html']
-        })))
+			html: path.src.html
+		})))
 
-        .pipe(gulp.dest('dist/assets/css/'))
+		.pipe(gulp.dest(path.dist.sass))
 });
 
 // Move, compile JS and minify
 gulp.task('javascript', function() {
-    return gulp.src('src/assets/js/*.js')
-        .pipe(concat('scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/assets/js'));
+	return gulp.src(path.src.js)
+		.pipe(concat('scripts.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(path.dist.js));
 });
 
 
 // Move favicon
 gulp.task('favicon', function() {
-    return gulp.src('src/favicon.ico')
-        .pipe(gulp.dest('dist'));
+	return gulp.src(path.src.favicon)
+		.pipe(gulp.dest(path.dist.favicon));
 });
 
 
 // Move, resize and compress images
 gulp.task('images', function() {
-    return gulp.src('src/**/*.{png,jpg,jpeg}')
+	return gulp.src(path.src.images)
 
 		// Only do the following if --production flag is on
 		.pipe(gulpif(argv.production, imageResize({
@@ -111,44 +135,46 @@ gulp.task('images', function() {
 		})))
 
 		// Only do the following if --production flag is on
-        .pipe(gulpif(argv.production, imagemin([
-            imageminJpegRecompress({
-                progressive: true,
-                max: 85,
-                min: 75
-            }),
-        ])))
+		.pipe(gulpif(argv.production, imagemin([
+			imageminJpegRecompress({
+				progressive: true,
+				max: 85,
+				min: 75
+			}),
+		])))
 
-        .pipe(gulp.dest('dist'));
+		.pipe(gulp.dest(path.dist.images));
 });
+
 
 // Delete _partials folders, no need for these for production
 gulp.task('remove_partials', function() {
-	del(['dist/**/_partials']).then(paths => {
-	    console.log('Deleted files and folders:\n', paths.join('\n'));
+	del(path.dist.partials).then(paths => {
+		console.log('Deleted files and folders:\n', paths.join('\n'));
 	});
 });
 
 // Restart from scratch
 gulp.task('restart', function() {
-    del(['dist'])
+	del(path.dist.html)
 });
+
 
 // All of the things
 gulp.task('default', ['html', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
-		gulp.watch('src/**/*.html', ['html', reload]);
-		gulp.watch('src/**/*.scss', ['stylesheets', reload]);
-		gulp.watch('src/assets/js/*.js', ['javascript', reload]);
-		gulp.watch('src/**/*.{png,jpg,jpeg}', ['images', reload]);
+		gulp.watch(path.src.html, ['html', reload]);
+		gulp.watch(path.src.sasswatch, ['stylesheets', reload]);
+		gulp.watch(path.src.js, ['javascript', reload]);
+		gulp.watch(path.src.images, ['images', reload]);
 	}
 
 });
 
 // Publish to github pages
 gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+	return gulp.src(path.dist.deploy)
+		.pipe(ghPages());
 });
