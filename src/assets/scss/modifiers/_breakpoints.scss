@@ -1,5 +1,17 @@
 // Responsive things
 
+@media screen and (min-width: 1000px) {
+
+	html {
+		font-size: 1.25em;
+	}
+
+	.max-width {
+		max-width: 800px;
+	}
+
+}
+
 @media screen and (max-width: 970px) {
 
 	.container-image-buster-spread {
