@@ -1,7 +1,7 @@
 // Link styles
 
 a {
-	color: $colorTextLinks;
+	color: darken($colorTextDefault, 20%);
 	position: relative;
 	text-decoration: none;
 	transition: all 0.2s;
