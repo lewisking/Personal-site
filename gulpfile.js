@@ -183,7 +183,7 @@ gulp.task('deploy_gh', function() {
 
 // --- Deploy tasks
 
-gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function(callback) {
+gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
@@ -192,7 +192,7 @@ gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'java
 		gulp.watch(path.src.js, ['javascript', reload]);
 		gulp.watch(path.src.images, ['images', reload]);
 	} else {
-		runSequence('remove_partials', ['deploy_gh'], callback);
+		runSequence('remove_partials', ['deploy_gh']);
 	}
 
 });
