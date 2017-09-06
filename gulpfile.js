@@ -163,7 +163,9 @@ gulp.task('remove_partials', function() {
 
 // Restart from scratch
 gulp.task('restart', function() {
-	del(path.dist.html);
+	return del(path.dist.html).then(paths => {
+		console.log('Deleted files and folders:\n', paths.join('\n'));
+	});
 });
 
 // Publish to github pages
@@ -174,7 +176,6 @@ gulp.task('deploy_gh', function() {
 
 // --- Deploy tasks
 
-// All of the things
 gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function(callback) {
 
 	// Only do the following if --production flag is off
