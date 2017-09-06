@@ -7,6 +7,7 @@ var
 	gulpif = require('gulp-if'),
 	argv = require('yargs').argv,
 	ghPages = require('gulp-gh-pages');
+	runSequence = require('run-sequence');
 
 	// HTML
 	htmlmin = require('gulp-htmlmin'),
@@ -157,7 +158,7 @@ gulp.task('images', function() {
 
 // Delete _partials folders, no need for these for production
 gulp.task('remove_partials', function() {
-	del(path.dist.partials).then(paths => {
+	return del(path.dist.partials).then(paths => {
 		console.log('Deleted files and folders:\n', paths.join('\n'));
 	});
 });
@@ -185,4 +186,13 @@ gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'java
 gulp.task('deploy', function() {
 	return gulp.src(path.dist.deploy)
 		.pipe(ghPages());
+});
+
+
+
+
+gulp.task('builder', function(callback) {
+	runSequence('remove_partials',
+	          ['deploy'],
+	          callback);
 });

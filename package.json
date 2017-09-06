@@ -25,6 +25,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uncss": "^1.0.6",
     "imagemin-jpeg-recompress": "^5.1.0",
+    "run-sequence": "^2.1.0",
     "yargs": "^8.0.2"
   }
 }
