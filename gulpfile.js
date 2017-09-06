@@ -1,3 +1,5 @@
+// --- Dependencies
+
 var
 	// General
 	gulp = require('gulp'),
@@ -29,7 +31,7 @@ var
 ;
 
 
-// Set up config and paths
+// --- Config
 
 path = {
 	src: {
@@ -56,10 +58,7 @@ path = {
 	}
 }
 
-// Output errors
-const onError = (err) => {
-	console.log(err);
-};
+// --- Production tasks
 
 // Run server
 gulp.task('browser-sync', function() {
@@ -155,7 +154,6 @@ gulp.task('images', function() {
 		.pipe(gulp.dest(path.dist.images));
 });
 
-
 // Delete _partials folders, no need for these for production
 gulp.task('remove_partials', function() {
 	return del(path.dist.partials).then(paths => {
@@ -168,9 +166,16 @@ gulp.task('restart', function() {
 	del(path.dist.html);
 });
 
+// Publish to github pages
+gulp.task('deploy_gh', function() {
+	return gulp.src(path.dist.deploy)
+		.pipe(ghPages());
+});
+
+// --- Deploy tasks
 
 // All of the things
-gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
+gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function(callback) {
 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
@@ -178,21 +183,8 @@ gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'java
 		gulp.watch(path.src.sasswatch, ['stylesheets', reload]);
 		gulp.watch(path.src.js, ['javascript', reload]);
 		gulp.watch(path.src.images, ['images', reload]);
+	} else {
+		runSequence('remove_partials', ['deploy_gh'], callback);
 	}
 
-});
-
-// Publish to github pages
-gulp.task('deploy', function() {
-	return gulp.src(path.dist.deploy)
-		.pipe(ghPages());
-});
-
-
-
-
-gulp.task('builder', function(callback) {
-	runSequence('remove_partials',
-	          ['deploy'],
-	          callback);
 });
