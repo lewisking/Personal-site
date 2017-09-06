@@ -2,14 +2,13 @@
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
-	font-weight: $boldFontWeight;
-	color: $colorTextDefault;
 	margin: 0;
 }
 
 h2 {
 	text-transform: uppercase;
 	@include font-size(16);
+	font-weight: $boldFontWeight;
 	color: darken($colorTextDefault, 30%);
 	letter-spacing: 0.1em;
 }

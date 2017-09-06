@@ -8,8 +8,8 @@ var
 	reload = browserSync.reload,
 	gulpif = require('gulp-if'),
 	argv = require('yargs').argv,
-	ghPages = require('gulp-gh-pages');
-	runSequence = require('run-sequence');
+	ghPages = require('gulp-gh-pages'),
+	runSequence = require('run-sequence'),
 
 	// HTML
 	htmlmin = require('gulp-htmlmin'),
@@ -19,6 +19,7 @@ var
 	autoprefixer = require('gulp-autoprefixer'),
 	sass = require('gulp-sass'),
 	uncss = require('gulp-uncss'),
+	cssnano = require('gulp-cssnano'),
 
 	// JS
 	concat = require('gulp-concat'),
@@ -95,12 +96,18 @@ gulp.task('html', function() {
 // Move, compile sass and minify
 gulp.task('stylesheets', function() {
 	return gulp.src(path.src.sass)
+
 		.pipe(sass({
 			outputStyle: 'compressed'
 		}))
+
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false
+		}))
+
+		.pipe(cssnano({
+			autoprefixer: false
 		}))
 
 		// Only do the following if --production flag is on
