@@ -8,6 +8,7 @@ a {
 	&:not(.remove-line) {
 		text-decoration: underline;
 		text-decoration-skip: ink;
+		text-decoration-skip-ink: auto;
 		&:active {
 			position: relative;
 			top: 1px;
