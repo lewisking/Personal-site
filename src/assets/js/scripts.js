@@ -11,4 +11,6 @@ if(currentMonth.getMonth() == 11) {
 }
 
 // Write to the DOM.
-document.getElementById('currentMonth').innerHTML = 'in ' + monthArraySet;
+document.addEventListener("DOMContentLoaded", function(event) {
+	document.getElementById('currentMonth').innerHTML = 'in ' + monthArraySet;
+});
