@@ -3,12 +3,12 @@
 .container-introduction {
 	h1 {
 		line-height: 1.5;
-		@include font-size(32);
+		@include font-size(36);
 		font-family: $headingFontFamily;
 		font-weight: normal;
-		color: darken($colorTextDefault, 40%);
+		color: #A4BCC2;
 		a {
-			color: darken($colorTextDefault, 40%);
+			color: #A4BCC2;
 		}
 	}
 	h2 + h1 {

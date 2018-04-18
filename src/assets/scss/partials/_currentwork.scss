@@ -20,7 +20,8 @@
 			&::after {
 				display: inline-block;
 				padding-left: 0.25em;
-				transition: translate 0.2s ease-in-out;
+				transform: translateX(0);
+				transition: transform 0.2s ease-in-out;
 				content: ' →';
 			}
 		}

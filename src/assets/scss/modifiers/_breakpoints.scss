@@ -1,36 +1,36 @@
 // Responsive things
 
-@media screen and (min-width: 1000px) {
+// @media screen and (min-width: 1000px) {
+//
+// 	html {
+// 		font-size: 1.25em;
+// 	}
+//
+// 	.max-width {
+// 		max-width: 800px;
+// 	}
+//
+// 	.container-image-buster-spread {
+// 		height: 1065px;
+// 	}
+//
+// 	.spread-ecommerce {
+// 		height: 1530px;
+// 	}
+//
+// }
 
-	html {
-		font-size: 1.25em;
-	}
-
-	.max-width {
-		max-width: 800px;
-	}
+@media screen and (min-width: 1000px)  {
 
 	.container-image-buster-spread {
-		height: 1065px;
-	}
-
-	.spread-ecommerce {
-		height: 1530px;
-	}
-
-}
-
-@media screen and (max-width: 1265px) and (min-width: 1000px)  {
-
-	.container-image-buster-spread {
-		height: 800px;
+		height: 600px;
 		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.spread-ecommerce {
-		height: 1146px;
+		height: 860px;
 	}
 
 
