@@ -114,13 +114,15 @@
 	padding-bottom: 7em;
 	display: flex;
 	justify-content: space-between;
+	a {
+		display: inline-block;
+		vertical-align: middle;
+		transition: translate 0.2s ease-in-out;
+	}
 	.next-link {
 		float: right;
 		&::after {
-			display: inline-block;
-			vertical-align: middle;
 			padding-left: 0.25em;
-			transition: translate 0.2s ease-in-out;
 			content: ' →';
 		}
 		&:hover {
@@ -133,10 +135,7 @@
 	.previous-link {
 		float: left;
 		&::before {
-			display: inline-block;
-			vertical-align: middle;
 			padding-right: 0.25em;
-			transition: translate 0.2s ease-in-out;
 			content: '← ';
 		}
 		&:hover {
