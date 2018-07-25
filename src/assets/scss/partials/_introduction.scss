@@ -4,11 +4,11 @@
 	h1 {
 		line-height: 1.5;
 		@include font-size(32);
+		color: #2020ff;
+		font-weight: $boldFontWeight;
 		font-family: $headingFontFamily;
-		font-weight: normal;
-		color: darken($colorTextDefault, 40%);
 		a {
-			color: darken($colorTextDefault, 40%);
+			color: #2020ff;
 		}
 	}
 	h2 + h1 {
