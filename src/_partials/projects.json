@@ -1,4 +1,5 @@
 [
+	{ "slug": "poolside", "title": "Poolside FM", "text": "Poolside FM - A retro digital oasis playing endless summer tunes", "disciplines": "Frontend &bull; Vue.js &bull; FireStore &bull; SoundCloud" },
 	{ "slug": "independentbath", "title": "Independent Bath", "text": "Showcasing independent businesses in the wonderful city I call home with my side project; Independent Bath", "disciplines": "Frontend &bull; Design &bull; Branding &bull; WordPress" },
 	{ "slug": "bluprint", "title": "bluprint", "text": "Building a live &amp; extendable Style Guide that has run the front-end experience for over 10 million people in the last year", "disciplines": "Scoping &bull; Design &bull; Frontend &bull; Maintenance &bull; Training" },
 	{ "slug": "ssgreatbritain", "title": "an interactive app for SS Great Britain", "text": "An interactive app for SS Great Britain that allows discovery of over 30,000 of the ship's inhabitants, both online and in the museum.", "disciplines": "Frontend &bull; UX &bull; Maintenance" },

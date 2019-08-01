@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('@@webRoot/_partials/header.html', {"title": "Project — Independent Bath"})
+</head>
+
+<body>
+
+	@@include('@@webRoot/_partials/icon.html')
+
+	<header class="container rellax container-introduction" id="introduction">
+		<div class="animated fadeInUp max-width">
+			<h2>Project</h2>
+			<h1>Poolside FM - A retro digital oasis playing endless summer tunes</h1>
+		</div>
+	</header>
+
+	<div class="animated fadeIn delay max-width">
+		<section class="container container-about" id="about">
+			<h2>An Introduction</h2>
+
+			<p>Poolside FM is a time machine to a simpler time in computing, recreating a late ’80s desktop in your browser window, complete with the perfect soundtrack and non-stop low-fi period-appropriate videos.</p>
+
+			<div class="container-image-buster">
+				<img src="assets/images/screenshot.png" title="A screenshot of Poolside FM">
+			</div>
+
+			<h2>Conception</h2>
+			<p>Marty first came to me last year to re-build Poolside FM. The brief was to make a Mac OS emulator in the browser. Using Vue and FireStore, we have created a retro digital oasis with endless summer tunes, ridiculous 80s videos and features that hark back to the golden era of 90s computing.</p>
+
+			<div class="container-image-buster">
+				<img src="assets/images/screenshot2.png" title="A screenshot of Poolside FM">
+			</div>
+
+
+			<h2>Technicals</h2>
+			<p>The project is written in Vue, which has been a huge help and has kept everything simple and componentised. It's easy for us to add new apps and we have everything syncing with FireStore, including user accounts and storing data. We integrated the music player with the SoundCloud API, which streams a few different playlists curated by Marty.</p>
+
+			<h2>Impact</h2>
+			<p>Poolside FM had over 1 million hits in the first two weeks of being launched, 3,000 new accounts and over 1000 guestbook entries. We also had news articles written about it on 
+					<a href="https://www.theverge.com/2019/7/26/8931651/poolside-fm-website-retro-summer-80s-soundcloud-playlist" target="_blank">The Verge</a>,
+					<a href="https://www.itsnicethat.com/articles/poolside-fm-digital-260719" target="_blank">It's Nice That</a>,
+					<a href="https://thenextweb.com/shareables/2019/07/26/retro-os-mac-windows-music-poolside/" target="_blank">The Next Web</a>,
+					<a href="https://techcrunch.com/2019/07/26/poolside-fm-is-the-most-fun-you-will-have-on-the-internet-today/" target="_blank">TechCrunch</a>,
+					<a href="https://coolhunting.com/tech/poolside-fm-desktop/" target="_blank">Cool Hunting</a> and many more.
+				</p>
+
+		</section>
+
+		<footer class="container container-project-link" id="project-link">
+			<a href="http://poolside.fm" title="Visit Poolside FM" target="_blank">Visit Poolside FM</a>
+
+			<a href="@@webRoot/projects/independentbath" title="Visit Next Project" class="remove-line next-link">Visit Next <span>Project</span></a>
+		</footer>
+	</div>
+
+
+	@@include('@@webRoot/_partials/footer.html')
+
+</body>
+
+</html>
