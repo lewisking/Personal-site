@@ -8,11 +8,11 @@
 	h1 {
 		line-height: 1.5;
 		@include font-size(32);
-		color: #2020ff;
+		color: #7fa8b1;
 		font-weight: $headerFontWeight;
 		font-family: $headingFontFamily;
 		a {
-			color: #2020ff;
+			color: #7fa8b1;
 		}
 		i {
 			text-align: center;
