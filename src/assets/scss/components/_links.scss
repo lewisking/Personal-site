@@ -13,5 +13,18 @@ a {
 			position: relative;
 			top: 1px;
 		}
+
+		background-image: linear-gradient(to right, transparent 50%, #e7fbff 50%);
+		background-position: 0;
+		background-size: 200%;
+		transition: all 0.2s;
+		// pointer-events: none;
+		backface-visibility: hidden;
+		&:hover {
+			background-position: -100%;
+		}
+		// a {
+		// 	pointer-events: all;
+		// }
 	}
 }
