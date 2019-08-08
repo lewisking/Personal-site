@@ -9,4 +9,4 @@
 
 If you would like to start from scratch, run "gulp restart" and the dist folder will be wiped.
 
-> You can see the end result on the branch "gh-pages" and see this site running at http://lewisking.net
+> You can see the end result on the branch "gh-pages" and see this site running at http://lewisking.co
