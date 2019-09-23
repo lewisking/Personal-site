@@ -22,6 +22,7 @@ a {
 		backface-visibility: hidden;
 		&:hover {
 			background-position: -100%;
+			color: $colorSiteBackground;
 		}
 		// a {
 		// 	pointer-events: all;

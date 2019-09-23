@@ -10,7 +10,7 @@ h2 {
 	text-transform: uppercase;
 	@include font-size(14);
 	font-family: $defaultFontFamily;
-	color: darken($colorTextDefault, 30%);
+	color: rgba($colorTextDefault, 0.5);
 }
 
 p {
@@ -28,6 +28,7 @@ p {
 ul {
 	margin-bottom: 0;
 	margin-top: 1.5em;
+	color: $colorTextDefault;
 	p {
 		margin: 0.5em 0 0 0;
 	}

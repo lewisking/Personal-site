@@ -8,11 +8,11 @@
 	h1 {
 		line-height: 1.5;
 		@include font-size(32);
-		color: #7fa8b1;
+		color: $colorTextDefault;
 		font-weight: $headerFontWeight;
 		font-family: $headingFontFamily;
 		a {
-			color: #7fa8b1;
+			color: $colorTextDefault;
 		}
 		i {
 			text-align: center;
@@ -21,20 +21,6 @@
 			font-style: normal;
 			display: inline-block;
 			vertical-align: top;
-		}
-		span {
-			background-image: linear-gradient(to right, transparent 50%, #e7fbff 50%);
-			background-position: 0;
-			background-size: 200%;
-			transition: all 0.4s;
-			pointer-events: none;
-			backface-visibility: hidden;
-			&:hover {
-				background-position: -100%;
-			}
-			a {
-				pointer-events: all;
-			}
 		}
 	}
 }
