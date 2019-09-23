@@ -183,8 +183,8 @@ gulp.task('deploy_gh', function() {
 
 // --- Deploy tasks
 
+gulp.task('default', ['html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'], function() {
 
-gulp.task('default', gulp.series('html', 'cname', 'stylesheets', 'images', 'favicon', 'javascript', 'browser-sync'), function() { 
 	// Only do the following if --production flag is off
 	if (argv.production != true) {
 		gulp.watch(paths.src.html, ['html', reload]);
