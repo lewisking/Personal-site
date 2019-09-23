@@ -27,6 +27,10 @@
 			<p>As of September 2019, I'm travelling through Asia whilst working with the <a href="https://poolside.fm" target="_blank" title="Open poolside.fm in a new window">poolside.fm</a> team, where I lead development.</p>
 		</section>
 
+		<section class="container container-current-work" id="current">
+			<h2>Example Work</h2>
+			@@loop('_partials/projects.html', '_partials/projects.json')
+		</section>
 
 		<section class="container container-help-with" id="help">
 			<h2>What I can help with</h2>
@@ -39,12 +43,6 @@
 				<li><p>Single Page Apps written in Vue</p></li>
 				<li><p>Development critque/general usability improvements</p></li>
 			</ul>
-		</section>
-
-
-		<section class="container container-current-work" id="current">
-			<h2>Example Work</h2>
-			@@loop('_partials/projects.html', '_partials/projects.json')
 		</section>
 
 		<section class="container container-contact" id="contact">
