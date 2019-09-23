@@ -102,7 +102,7 @@ gulp.task('stylesheets', function() {
 		}))
 
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
+			// browsers: ['last 2 versions'],
 			cascade: false
 		}))
 
@@ -194,5 +194,4 @@ gulp.task('default', gulp.series('html', 'cname', 'stylesheets', 'images', 'favi
 	} else {
 		runSequence('remove_partials', ['deploy_gh']);
 	}
-
 });
