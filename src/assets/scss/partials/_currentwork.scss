@@ -27,6 +27,28 @@
 		}
 	}
 
+	&:first-of-type {
+		&::before {
+			content: "Latest —";
+			@include font-size(10);
+			font-weight: 500;
+			text-transform: uppercase;
+			color: $colorSiteBackground;
+		}
+		background-color: $colorTextDefault;
+		transition: background-color 0.2s ease-in-out;
+		&:hover {
+			background-color: rgba($colorTextDefault,0.8);
+		}
+		padding: 1em 1.5em 1.25em 1.5em;
+		p {
+			color: $colorSiteBackground;
+		}
+		small {
+			color: rgba($colorSiteBackground,0.8);
+		}
+	}
+
 	a:hover p {
 		&::after {
 			transform: translateX(5px);
