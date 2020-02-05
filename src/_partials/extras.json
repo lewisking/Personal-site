@@ -1,0 +1,32 @@
+[
+    { 
+        "slug": "dizzeerascal", 
+        "title": "Dizzee Rascal's personal site", 
+        "url": "https://raskit.co.uk/"
+    },
+    { 
+        "slug": "trinitypersonnel", 
+        "title": "Trinity Personnel", 
+        "url": "http://trinitypersonnel.co.uk"
+    },
+    { 
+        "slug": "easylife", 
+        "title": "Easy Life Music", 
+        "url": "http://easylifemusic.com"
+    },
+    { 
+        "slug": "elementarytech", 
+        "title": "Elementary Technology", 
+        "url": "http://elementaryuk.com"
+    },
+    { 
+        "slug": "metallicinc", 
+        "title": "Metallic Inc", 
+        "url": "http://metallicinc.com"
+    },
+    { 
+        "slug": "homecoming", 
+        "title": "Our Homecoming", 
+        "url": "http://ourhomecoming.com"
+    }
+]
