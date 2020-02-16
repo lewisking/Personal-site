@@ -10,50 +10,58 @@
 
 	@@include('@@webRoot/_partials/icon.html')
 
-	<header class="container container-introduction rellax" id="introduction">
-		<h1 class="animated fadeInUp max-width"><span><i>👋</i> Hello! My name is Lewis; I'm a freelance User Interface Developer, hopping around Asia as a digital nomad.</span></h1>
+	<header class="container container-introduction" id="introduction">
+		<div class="max-width rellax" data-rellax-speed="4">
+			<h1><i>👋</i> Hello, my name is Lewis</h1>
+			<h2>I'm a User Interface Developer, building cool things for the web whilst I travel through Asia.</h2>
+			<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="#00c" clip-rule="evenodd"><path d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"/></svg>
+		</div>
 	</header>
 
-	<div class="animated fadeIn delay max-width">
-		<section class="container container-about" id="about">
-			<h2>About me</h2>
 
-			<p>I've been a working with the web for over 12 years, starting all the way back when I was just 13. I love creating clean, modern & usable sites and online experiences.</p>
+	<div class="offset-top">
+		<div class="offset-top">
+<div class="animated fadeIn delay max-width">
+			<section class="container container-about" id="about">
+				<h2>About me</h2>
 
-			<p>For 6 years I headed up the front-end team at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - a leading eCommerce agency. Whilst at blubolt, I spent my time building front-end features and functionality to help fuel growth, and improve all aspects of our integration process. I was hands-on with clients and a public facing member of the production team. I built most of the front-end on our <a href="/projects/ecommerce" title="Building the front-end for some of the UK's biggest eCommerce retailers">client sites</a> and our internal tooling/<a href="projects/cmseditor/" title="Providing UX consultation and front-end build on a new in-line CMS editor for eCommerce sites">platform features</a>.</p>
+				<p>I've been a working with the web for over 12 years, starting all the way back when I was just 13. I love creating clean, modern & usable sites and online experiences.</p>
 
-			<p>Last year I joined the team at <a href="https://deepbluesky.com" title="External link to Deep Blue Sky" target="_blank">Deep Blue Sky</a>; a leading software development studio. Whilst at Deep Blue Sky I have built the front-end for varying projects including <a href="/projects/ssgreatbritain" title="Read about an interactive app for SS Great Britain">an interactive museum kiosk</a>, a medical recruitment platform and a browser plugin to help you manage your news bias.</p>
+				<p>For 6 years I headed up the front-end team at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - a leading eCommerce agency. Whilst at blubolt, I spent my time building front-end features and functionality to help fuel growth, and improve all aspects of our integration process. I was hands-on with clients and a public facing member of the production team. I built most of the front-end on our <a href="/projects/ecommerce" title="Building the front-end for some of the UK's biggest eCommerce retailers">client sites</a> and our internal tooling/<a href="projects/cmseditor/" title="Providing UX consultation and front-end build on a new in-line CMS editor for eCommerce sites">platform features</a>.</p>
 
-			<p>As of September 2019, I'm travelling through Asia whilst working with the <a href="https://poolside.fm" target="_blank" title="Open poolside.fm in a new window">poolside.fm</a> team, where I lead development.</p>
-		</section>
+				<p>Last year I joined the team at <a href="https://deepbluesky.com" title="External link to Deep Blue Sky" target="_blank">Deep Blue Sky</a>; a leading software development studio. Whilst at Deep Blue Sky I have built the front-end for varying projects including <a href="/projects/ssgreatbritain" title="Read about an interactive app for SS Great Britain">an interactive museum kiosk</a>, a medical recruitment platform and a browser plugin to help you manage your news bias.</p>
 
-		<section class="container container-current-work" id="current">
-			<h2>Example Work</h2>
-			@@loop('_partials/projects.html', '_partials/projects.json')
-		</section>
+				<p>As of September 2019, I'm travelling through Asia whilst working with the <a href="https://poolside.fm" target="_blank" title="Open poolside.fm in a new window">poolside.fm</a> team, where I lead development.</p>
+			</section>
 
-		<section class="container container-extra-work" id="extra">
-			<h2>More examples</h2>
-			@@loop('_partials/extras.html', '_partials/extras.json')
-		</section>
+			<section class="container container-current-work" id="current">
+				<h2>Example Work</h2>
+				@@loop('_partials/projects.html', '_partials/projects.json')
+			</section>
 
-		<section class="container container-help-with" id="help">
-			<h2>What I can help with</h2>
-			<p>If you would like to work on something interesting together; I am available for a <strong>limited amount</strong> of freelance work <span id="currentMonth">next month</span>. I am happy to take on a wide varity of front-end projects but here is a list of things I particularly love helping with:</p>
-			<ul>
-				<li><p>Front-end feasability/scoping</p></li>
-				<li><p>Building front-end pattern libraries</p></li>
-				<li><p>WordPress integrations</p></li>
-				<li><p>Full redesigns/front-end rewrites of existing products</p></li>
-				<li><p>Single Page Apps written in Vue</p></li>
-				<li><p>Development critque/general usability improvements</p></li>
-			</ul>
-		</section>
+			<section class="container container-extra-work" id="extra">
+				<h2>More examples</h2>
+				@@loop('_partials/extras.html', '_partials/extras.json')
+			</section>
 
-		<section class="container container-contact" id="contact">
-			<h2>Contact Me</h2>
-			<p>You can follow me on <a class="twitter" target="_blank" href="http://twitter.com/lewisking" class="remove-line" title="Keep up to date with things that I think are somehow are relevant on Twitter">Twitter</a>, listen to some playlists I am building on <a class="spotify" target="_blank" href="https://open.spotify.com/user/lewisking1994" class="remove-line" title="Subscribe to my playlists on Spotify">Spotify</a>, get all professional on <a class="linkedin" target="_blank" href="http://linkedin.com/in/lewis-king" class="remove-line" title="Visit my LinkedIn Profile">LinkedIn</a> or view some photos I've taken recently on <a class="instagram" target="_blank" href="http://instagram.com/lewis" class="remove-line" title="View my photos that mainly consist of coffee, travelling and bands I see live">Instagram</a>. Alternatively, if you want to work together, please feel free to contact me via <a href="mailto:lewisking@me.com" title="Email me">email</a>.</p><p><a class="github" target="_blank" href="https://github.com/lewisking/personal-site" class="remove-line" title="View source code on GitHub">View source code on GitHub</a>.</p>
-		</section>
+			<section class="container container-help-with" id="help">
+				<h2>What I can help with</h2>
+				<p>If you would like to work on something interesting together; I am available for a <strong>limited amount</strong> of freelance work <span id="currentMonth">next month</span>. I am happy to take on a wide varity of front-end projects but here is a list of things I particularly love helping with:</p>
+				<ul>
+					<li><p>Front-end feasability/scoping</p></li>
+					<li><p>Building front-end pattern libraries</p></li>
+					<li><p>WordPress integrations</p></li>
+					<li><p>Full redesigns/front-end rewrites of existing products</p></li>
+					<li><p>Single Page Apps written in Vue</p></li>
+					<li><p>Development critque/general usability improvements</p></li>
+				</ul>
+			</section>
+
+			<section class="container container-contact" id="contact">
+				<h2>Contact Me</h2>
+				<p>You can follow me on <a class="twitter" target="_blank" href="http://twitter.com/lewisking" class="remove-line" title="Keep up to date with things that I think are somehow are relevant on Twitter">Twitter</a>, listen to some playlists I am building on <a class="spotify" target="_blank" href="https://open.spotify.com/user/lewisking1994" class="remove-line" title="Subscribe to my playlists on Spotify">Spotify</a>, get all professional on <a class="linkedin" target="_blank" href="http://linkedin.com/in/lewis-king" class="remove-line" title="Visit my LinkedIn Profile">LinkedIn</a> or view some photos I've taken recently on <a class="instagram" target="_blank" href="http://instagram.com/lewis" class="remove-line" title="View my photos that mainly consist of coffee, travelling and bands I see live">Instagram</a>. Alternatively, if you want to work together, please feel free to contact me via <a href="mailto:lewisking@me.com" title="Email me">email</a>.</p><p><a class="github" target="_blank" href="https://github.com/lewisking/personal-site" class="remove-line" title="View source code on GitHub">View source code on GitHub</a>.</p>
+			</section>
+		</div>
 	</div>
 
 	@@include('@@webRoot/_partials/footer.html')

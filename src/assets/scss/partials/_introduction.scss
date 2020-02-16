@@ -1,14 +1,24 @@
 // Introduction section
 
 .container-introduction {
-	margin: 4em 0;
-	h2 + h1 {
+	height: 90vh;
+	padding: 2em 0;
+	display: flex;
+	position: fixed; 
+	top: 0;
+	width: 100%;
+	// text-align: center;
+	background: $colorSiteBackground;
+	h1 + h2 {
 		margin-top: 0.5em;
+	}
+	h2 + svg {
+		margin-top: 1.5em;
 	}
 	h1 {
 		line-height: 1.5;
-		@include font-size(32);
-		color: $colorTextDefault;
+		@include font-size(42);
+		color: $colorTextHeading;
 		font-weight: $headerFontWeight;
 		font-family: $headingFontFamily;
 		a {
@@ -23,9 +33,20 @@
 			vertical-align: top;
 		}
 	}
+
+	h2 {
+		text-transform: none;
+		font-weight: normal;
+		// color: lighten($colorSiteBackground,30%);
+	}
 }
 
-
+.offset-top {
+	background: #fff;
+	z-index: 2;
+	position: relative;
+	margin-top: 90vh;
+}
 
 @keyframes waver {
 	0% {transform: rotate(0);}

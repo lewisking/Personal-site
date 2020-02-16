@@ -4,13 +4,13 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
 	margin: 0;
 	font-weight: $headerFontWeight;
+	color: $colorTextDefault;
 }
 
 h2 {
 	text-transform: uppercase;
 	@include font-size(14);
 	font-family: $defaultFontFamily;
-	color: rgba($colorTextDefault, 0.5);
 }
 
 p {
