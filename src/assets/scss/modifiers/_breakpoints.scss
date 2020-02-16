@@ -79,8 +79,11 @@
 
 	.container-introduction {
 		h1 {
-			@include font-size(22);
-			line-height: 1.8;
+			@include font-size(28);
+			line-height: 1.4;
+			i {
+				display: none;
+			}
 		}
 	}
 

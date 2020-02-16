@@ -1,8 +1,8 @@
 // Introduction section
 
 .container-introduction {
-	height: 90vh;
-	padding: 2em 0;
+	height: 80vh;
+	padding: 2em 0 !important;
 	display: flex;
 	position: fixed; 
 	top: 0;
@@ -37,7 +37,7 @@
 	h2 {
 		text-transform: none;
 		font-weight: normal;
-		// color: lighten($colorSiteBackground,30%);
+		line-height: 1.5;
 	}
 }
 
