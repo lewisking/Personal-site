@@ -1,25 +1,5 @@
 // Responsive things
 
-@media screen and (min-width: 1000px) {
-
-	html {
-		font-size: 1.25em;
-	}
-
-	.max-width {
-		max-width: 800px;
-	}
-
-	.container-image-buster-spread {
-		height: 1065px;
-	}
-
-	.spread-ecommerce {
-		height: 1530px;
-	}
-
-}
-
 @media screen and (min-width: 1000px)  {
 
 	.container-image-buster-spread {
@@ -121,6 +101,32 @@
 		span {
 			display: none;
 		}
+	}
+
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+
+	html {
+		font-size: 1.25em;
+	}
+
+	.max-width {
+		max-width: 800px;
+	}
+
+	.container-image-buster-spread {
+		height: 800px;
+	}
+
+	.spread-ecommerce {
+		height: 1530px;
 	}
 
 }
