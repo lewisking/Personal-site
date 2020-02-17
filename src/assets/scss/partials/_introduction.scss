@@ -8,7 +8,7 @@
 	top: 0;
 	width: 100%;
 	// text-align: center;
-	background: $colorSiteBackground;
+	// background: $colorSiteBackground;
 	h1 + h2 {
 		margin-top: 0.5em;
 	}
@@ -45,7 +45,11 @@
 	background: #fff;
 	z-index: 2;
 	position: relative;
-	margin-top: 90vh;
+	width: 90%;
+	margin: 80vh auto 5em auto;
+	width: calc(100% - 2em);
+	border-radius: 10px;
+	max-width: 1000px;
 }
 
 @keyframes waver {
