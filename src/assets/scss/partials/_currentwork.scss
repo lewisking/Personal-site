@@ -49,7 +49,7 @@
 			text-transform: uppercase;
 			color: $colorSiteBackground;
 		}
-		background-color: $colorTextDefault;
+		background-color: $colorTextHeading;
 		transition: background-color 0.2s ease-in-out;
 		&:hover {
 			background-color: rgba($colorTextDefault,0.8);
