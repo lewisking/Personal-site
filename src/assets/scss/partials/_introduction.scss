@@ -4,7 +4,7 @@
 	height: 80vh;
 	padding: 2em 0 !important;
 	display: flex;
-	position: fixed; 
+	// position: fixed; 
 	top: 0;
 	width: 100%;
 	// text-align: center;
@@ -21,6 +21,7 @@
 		color: $colorTextHeading;
 		font-weight: $headerFontWeight;
 		font-family: $headingFontFamily;
+		text-align: center;
 		a {
 			color: $colorTextDefault;
 		}
@@ -46,11 +47,11 @@
 	background: #fff;
 	z-index: 2;
 	position: relative;
-	width: 90%;
-	margin: 80vh auto 5em auto;
-	width: calc(100% - 2em);
-	border-radius: 10px;
-	max-width: 1000px;
+	// width: 90%;
+	margin: 0 auto 0 auto;
+	// // width: calc(100% - 2em);
+	// border-radius: 10px;
+	// max-width: 1150px;
 }
 
 @keyframes waver {

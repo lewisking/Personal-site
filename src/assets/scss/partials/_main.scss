@@ -1,15 +1,47 @@
 // Background colours for containers
 
 .container {
-	padding: 5.5em 0 0 0;
+  padding: 5.5em 0 0 0;
 }
 
 .max-width {
-	margin: auto;
-	width: 90%;
-	max-width: 620px;
+  margin: auto;
+  width: 90%;
+  max-width: 620px;
 }
 
+nav {
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+
+nav .max-width {
+  padding: 2em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+	padding: 0;
+	@media (max-width: 640px) {
+		display: none;
+	}
+  }
+
+  li + li {
+    margin-left: 2em;
+  }
+
+  li a {
+    color: #000;
+	font-size: 14px;
+	text-decoration: none;
+	font-family: $headingFontFamily;
+  }
+}
 
 // html::after {
 // 	width: 100vw;

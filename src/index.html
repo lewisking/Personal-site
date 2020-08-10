@@ -10,36 +10,38 @@
 
 	@@include('@@webRoot/_partials/icon.html')
 
-	<header class="container container-introduction" id="introduction">
-		<div class="max-width rellax" data-rellax-speed="4">
-			<h1><i>👋</i> Hello, my name is Lewis</h1>
-			<h2>I'm a User Interface Developer, building cool things for the web whilst I travel through Asia.</h2>
-			<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="#55467b" clip-rule="evenodd"><path d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"/></svg>
+	<header class="container container-introduction animated fadeIn delay" id="introduction">
+		<div class="max-width">
+			<h1>A detail-orientated User Interface Developer, building interesting things for the web whilst travelling around Asia.</h1>
+			<!-- <h2>I'm a User Interface Developer, building cool things for the web whilst I travel through Asia.</h2> -->
+			<!-- <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="#55467b" clip-rule="evenodd"><path d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"/></svg> -->
 		</div>
 	</header>
 
 
-	<div class="offset-top animated fadeInUp">
-		<div class="animated fadeIn delay max-width">
+	<div class="offset-top animated fadeInUp delay-two">
+		<div class="max-width">
 			<section class="container container-about" id="about">
 				<h2>About me</h2>
 
-				<p>I've been a working with the web for over 12 years, starting all the way back when I was just 13. I love creating clean, modern & usable sites and online experiences.</p>
+				<p>👋&nbsp; Hello, my name is Lewis. I'm a User Interface developer from the UK, currently travelling around Asia. I've been a working with the web for over 12 years, starting all the way back when I was just 13. I love creating clean, modern & usable sites and online experiences.</p>
 
-				<p>For 6 years I headed up the front-end team at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - a leading eCommerce agency. Whilst at blubolt, I spent my time building front-end features and functionality to help fuel growth, and improve all aspects of our integration process. I was hands-on with clients and a public facing member of the production team. I built most of the front-end on our <a href="/projects/ecommerce" title="Building the front-end for some of the UK's biggest eCommerce retailers">client sites</a> and our internal tooling/<a href="projects/cmseditor/" title="Providing UX consultation and front-end build on a new in-line CMS editor for eCommerce sites">platform features</a>.</p>
+				<p>For six years I headed up the front-end team at <a target="_blank" href="http://blubolt.com" title="External link to blubolt">blubolt</a> - a leading eCommerce agency. Whilst at blubolt, I spent my time building front-end features and functionality to help fuel growth, and improve all aspects of our integration process. I was hands-on with clients and a public facing member of the production team. I built most of the front-end on our <a href="/projects/ecommerce" title="Building the front-end for some of the UK's biggest eCommerce retailers">client sites</a> and our internal tooling/<a href="projects/cmseditor/" title="Providing UX consultation and front-end build on a new in-line CMS editor for eCommerce sites">platform features</a>.</p>
 
-				<p>Last year I joined the team at <a href="https://deepbluesky.com" title="External link to Deep Blue Sky" target="_blank">Deep Blue Sky</a>; a leading software development studio. Whilst at Deep Blue Sky I have built the front-end for varying projects including <a href="/projects/ssgreatbritain" title="Read about an interactive app for SS Great Britain">an interactive museum kiosk</a>, a medical recruitment platform and a browser plugin to help you manage your news bias.</p>
+				<p>For two years I worked with the team at <a href="https://deepbluesky.com" title="External link to Deep Blue Sky" target="_blank">Deep Blue Sky</a>; a leading software development studio. Whilst at Deep Blue Sky I have built the front-end for varying projects including <a href="/projects/ssgreatbritain" title="Read about an interactive app for SS Great Britain">an interactive museum kiosk</a>, a medical recruitment platform and a browser plugin to help you manage your news bias.</p>
 
 				<p>As of September 2019, I'm travelling through Asia whilst working with the <a href="https://poolside.fm" target="_blank" title="Open poolside.fm in a new window">poolside.fm</a> team, where I lead development.</p>
 			</section>
 
-			<section class="container container-current-work" id="current">
-				<h2>Example Work</h2>
-				@@loop('_partials/projects.html', '_partials/projects.json')
+			<section class="container container-current-work" id="projects">
+				<h2>Projects</h2>
+				<div class="example-work-grid">
+					@@loop('_partials/projects.html', '_partials/projects.json')
+				</div>
 			</section>
 
 			<section class="container container-extra-work" id="extra">
-				<h2>More examples</h2>
+				<h2>More</h2>
 				@@loop('_partials/extras.html', '_partials/extras.json')
 			</section>
 

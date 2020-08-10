@@ -1,39 +1,40 @@
 // Icon of me
 
 .icon-me {
-	position: fixed;
-	left: 2em;
-	top: 1em;
-	display: block;
-	// background: #FFAFBD;  /* fallback for old browsers */
-	// background: -webkit-linear-gradient(to left, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
-	// background: linear-gradient(to left, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	
-	padding: 5px;
-	z-index: 5;
-	white-space: nowrap;
-	border-radius: 40px;
-	img {
-		width: 40px;
-		height: 40px;
-		height: auto;
-		display: inline-block;
-		vertical-align: middle;
-		border-radius: 50%;
-	}
+  // position: fixed;
+  // left: 2em;
+  // top: 1em;
+  display: block;
+  // background: #FFAFBD;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to left, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to left, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	span {
-		padding: 0 0.5em;
-		line-height: 40px;
-		display: none;
-	}
+//   padding: 5px;
+  z-index: 5;
+  white-space: nowrap;
+  border-radius: 40px;
+  img {
+    width: 40px;
+    height: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+
+  span {
+    padding: 0 0.5em;
+    line-height: 40px;
+	display: none;
+	font-size: 12px;
+  }
 }
 
 body:not(.is-index) {
-	.icon-me {
-		span {
-			display: inline-block;
-			vertical-align: middle;
-		}
-	}
+  .icon-me {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
 }

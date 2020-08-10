@@ -17,3 +17,11 @@ body {
 .delay {
 	animation-delay: 1s;
 }
+
+.delay-two {
+	animation-delay: 1.5s;
+}
+
+* {
+	scroll-behavior: smooth;
+}

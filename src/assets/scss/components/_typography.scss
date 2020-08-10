@@ -8,16 +8,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-	text-transform: uppercase;
-	@include font-size(14);
-	font-family: $defaultFontFamily;
-	color: rgb(64, 64, 64);
+	// text-transform: uppercase;
+	@include font-size(20);
+	font-family: $headingFontFamily;
+	font-weight: $headerFontWeight;
+	// color: rgb(64, 64, 64);
 }
 
 p {
-	@include font-size(16);
+	@include font-size(14);
 	color: $colorTextDefault;
 	margin-bottom: 1.5em;
+	line-height: 1.8;
 	&:last-of-type {
 		margin-bottom: 0;
 	}
