@@ -41,7 +41,7 @@
     // opacity: 1;
   }
 
-  padding: 1em 1.5em 1.25em 1.5em;
+  padding: 1.25em 1.5em 1.25em 1.5em;
   a {
     position: static;
     display: block;
@@ -62,13 +62,13 @@
     margin: 0;
     // &:first-of-type {
     margin: 0;
-    &::after {
-      display: inline-block;
-      padding-left: 0.25em;
-      transform: translateX(0);
-      transition: transform 0.2s ease-in-out;
-      content: " →";
-    }
+    // &::after {
+    //   display: inline-block;
+    //   padding-left: 0.25em;
+    //   transform: translateX(0);
+    //   transition: transform 0.2s ease-in-out;
+    //   content: " →";
+    // }
     // }
   }
 
@@ -82,21 +82,12 @@
   // 	}
   // }
 
+
   p {
-    color: #fff;
+    color: $colorTextDefault;
   }
-
   small {
-    color: rgba(#fff, 0.8);
-  }
-
-  &.dark {
-    p {
-      color: $colorTextDefault;
-    }
-    small {
-      color: rgba($colorTextDefault, 0.8);
-    }
+    color: rgba($colorTextDefault, 0.8);
   }
 
   small {
