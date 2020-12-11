@@ -96,3 +96,16 @@
     // color: lighten($colorTextDefault,20%);
   }
 }
+
+
+
+
+.current-item {
+	a {
+		display: none;
+	}
+	a:last-of-type {
+		display: block;
+	}
+	
+}

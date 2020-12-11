@@ -1,5 +1,6 @@
 [
 	{ "slug": "poolside", "title": "Poolside FM", "text": "Poolside FM - A retro digital oasis playing endless summer tunes", "disciplines": "Frontend &bull; Vue.js &bull; FireStore &bull; SoundCloud" },
+	{  "slug": "mojomen", "link" : "https://mojomen.com", "title": "Mojo Men", "text": "Mojo Men - an expert video platform. Getting it up, made easy. No pills needed.", "disciplines": "Frontend &bull; WordPress &bull; Backend" },
 	{ "slug": "cmseditor", "title": "the CMS editor", "text": "Providing UX consultation and front-end build on a new in-line CMS editor for eCommerce sites", "disciplines": "Frontend &bull; UX Consultation &bull; Maintenance" },
 	{ "slug": "ssgreatbritain", "title": "an interactive app for SS Great Britain", "text": "An interactive app for SS Great Britain that allows discovery of over 30,000 of the ship's inhabitants, both online and in the museum.", "disciplines": "Frontend &bull; UX &bull; Maintenance" },
 	{ "slug": "onesub", "title": "OneSub", "text": "OneSub, a new online platform aiming to save democracy. See every angle of the news stories you read, and track your bias for free.", "disciplines": "Vue.js Frontend &bull; UX Consultation &bull; Maintenance" },
